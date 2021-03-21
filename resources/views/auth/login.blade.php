@@ -65,6 +65,13 @@
                             </div>
                         </div>
                     </form>
+<<<<<<< HEAD
+=======
+                    <a class="btn btn-primary" href="{{ route('login.facebook') }}">
+                        Login with Facebook
+                    </a>
+
+>>>>>>> 77494c896db97c2b7353ff58611855349e1c0362
                 </div>
             </div>
         </div>
