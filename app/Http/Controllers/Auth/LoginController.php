@@ -6,15 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-<<<<<<< HEAD
-=======
 use App\Models\User;
 use Validator;
 use Socialite;
 use Exception;
 use Auth;
 
->>>>>>> 77494c896db97c2b7353ff58611855349e1c0362
 class LoginController extends Controller
 {
     /*
@@ -46,8 +43,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-<<<<<<< HEAD
-=======
 
     public function facebookRedirect()
     {
@@ -78,5 +73,4 @@ class LoginController extends Controller
             dd($exception->getMessage());
         }
     }
->>>>>>> 77494c896db97c2b7353ff58611855349e1c0362
 }
