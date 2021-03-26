@@ -24,4 +24,7 @@ Auth::routes();
 Route::get('auth/facebook', 'Auth\LoginController@facebookRedirect')->name('login.facebook');
 Route::get('auth/facebook/callback', 'Auth\LoginController@loginWithFacebook');
 
+Route::get('auth/google', 'Auth\LoginController@googleRedirect')->name('login.google');
+Route::get('auth/google/callback', 'Auth\LoginController@loginWithGoogle');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

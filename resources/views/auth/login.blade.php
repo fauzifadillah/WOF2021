@@ -68,7 +68,9 @@
                     <a class="btn btn-primary" href="{{ route('login.facebook') }}">
                         Login with Facebook
                     </a>
-
+                    <a class="btn btn-primary" href="{{ route('login.google') }}">
+                        Login with Google
+                    </a>
                 </div>
             </div>
         </div>
