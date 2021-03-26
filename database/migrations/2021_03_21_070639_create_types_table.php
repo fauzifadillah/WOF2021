@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLeaderboardsTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateLeaderboardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('leaderboards', function (Blueprint $table) {
+        Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('total_point');
-            $table->integer('current_point');
-            $table->foreignId('level_id');
+            $table->string('name');
+            $table->foreignId('trigger_id')->references('id')->on('triggers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateLeaderboardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leaderboards');
+        Schema::dropIfExists('types');
     }
 }

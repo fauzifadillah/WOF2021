@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('auth/facebook', 'Auth\LoginController@facebookRedirect')->name('login.facebook');
 Route::get('auth/facebook/callback', 'Auth\LoginController@loginWithFacebook');
@@ -27,4 +27,4 @@ Route::get('auth/facebook/callback', 'Auth\LoginController@loginWithFacebook');
 Route::get('auth/google', 'Auth\LoginController@googleRedirect')->name('login.google');
 Route::get('auth/google/callback', 'Auth\LoginController@loginWithGoogle');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
