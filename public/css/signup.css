@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --white: #ffffff;
+  --grey40: #404040;
+  --grey70: #707070;
+  --blue: #003575;
+  --red: #ED1C24;
+  --black: #000000;
+}
+
+.log__container__wrap__header {
+  width: 100%;
+  height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log__container__wrap__header h1 {
+  font-size: 36px;
+  color: var(--blue);
+}
+
+.log__container__wrap__form {
+  width: 100%;
+  height: 425px;
+}
+
+.log__container__wrap__form form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log__container__wrap__form form .form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+}
+
+.log__container__wrap__form form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.log__container__wrap__form form input {
+  width: 400px;
+  height: 48px;
+  border: 1px solid var(--grey70);
+  border-radius: 8px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.log__container__wrap__form form input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: var(--grey70);
+}
+
+.log__container__wrap__form form input:-ms-input-placeholder {
+  font-size: 16px;
+  color: var(--grey70);
+}
+
+.log__container__wrap__form form input::-ms-input-placeholder {
+  font-size: 16px;
+  color: var(--grey70);
+}
+
+.log__container__wrap__form form input::placeholder {
+  font-size: 16px;
+  color: var(--grey70);
+}
+
+.log__container__wrap__button {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 10px;
+}
+
+.log__container__wrap__button p {
+  font-size: 16px;
+  color: var(--grey70);
+}
+
+.log__container__wrap__button p a {
+  color: var(--blue);
+}
+
+.log__container__wrap__button .sign-up {
+  background-color: var(--blue);
+  width: 400px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 16px;
+  cursor: pointer;
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+.log__container__wrap__button .sign-up:focus {
+  outline: none;
+}
+
+.log__container__wrap__button .sign-up:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-transition: linear 0.1s;
+  transition: linear 0.1s;
+}
+
+@media screen and (max-width: 600px) {
+  .log__container__wrap__header {
+    height: 60px;
+  }
+  .log__container__wrap__header h1 {
+    font-size: 24px;
+  }
+  .log__container__wrap__form {
+    height: 240px;
+  }
+  .log__container__wrap__form form .form__group {
+    margin-top: 16px;
+  }
+  .log__container__wrap__form form label {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+  .log__container__wrap__form form input {
+    width: 226px;
+    height: 27px;
+    padding-left: 10px;
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input::-webkit-input-placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input:-ms-input-placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input::-ms-input-placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input::placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__button {
+    width: 100%;
+    height: 73px;
+  }
+  .log__container__wrap__button p {
+    font-size: 9px;
+  }
+  .log__container__wrap__button .sign-up {
+    width: 226px;
+    height: 27px;
+    font-size: 9px;
+    margin-right: 10px;
+  }
+  p {
+    font-size: 12px;
+  }
+  p a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--blue);
+  }
+}
+/*# sourceMappingURL=signup.css.map */

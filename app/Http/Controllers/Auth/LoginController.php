@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 use App\Models\User;
 use Validator;
@@ -44,6 +45,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function login(Request $request)
+    {
+        dd($request);
+    }
+
     public function facebookRedirect()
     {
         return Socialite::driver('facebook')->redirect();
@@ -53,7 +59,7 @@ class LoginController extends Controller
     {
         try {
             $user = Socialite::driver('facebook')->user();
-            $isUser = User::where('fb_id', $user->id)->first();
+            $isUser = User::where('facebook_id', $user->id)->first();
             if($isUser){
                 Auth::login($isUser);
                 return redirect('/home');
@@ -61,14 +67,13 @@ class LoginController extends Controller
                 $createUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'fb_id' => $user->id,
-                    'password' => encrypt('admin@123')
+                    'password' => encrypt('admin@123'),
+                    'avatar' => $user->avatar,
+                    'facebook_id' => $user->id,
                 ]);
-
                 Auth::login($createUser);
                 return redirect('/home');
             }
-
         } catch (Exception $exception) {
             dd($exception->getMessage());
         }

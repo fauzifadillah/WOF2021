@@ -1,0 +1,328 @@
+.log__container__wrap__header {
+  width: 100%;
+  height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log__container__wrap__header h1 {
+  font-size: 36px;
+  color: var(--blue);
+}
+
+.log__container__wrap__form {
+  width: 100%;
+  height: 240px;
+}
+
+.log__container__wrap__form form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log__container__wrap__form form .email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+}
+
+.log__container__wrap__form form .password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+}
+
+.log__container__wrap__form form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.log__container__wrap__form form input {
+  width: 400px;
+  height: 48px;
+  border: 1px solid #A7A7A7;
+  border-radius: 8px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.log__container__wrap__form form input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #A7A7A7;
+}
+
+.log__container__wrap__form form input:-ms-input-placeholder {
+  font-size: 16px;
+  color: #A7A7A7;
+}
+
+.log__container__wrap__form form input::-ms-input-placeholder {
+  font-size: 16px;
+  color: #A7A7A7;
+}
+
+.log__container__wrap__form form input::placeholder {
+  font-size: 16px;
+  color: #A7A7A7;
+}
+
+.log__container__wrap__button {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 60px;
+}
+
+.log__container__wrap__button .sign-in {
+  background-color: var(--blue);
+  width: 400px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.log__container__wrap__button .sign-in:focus {
+  outline: none;
+}
+
+.log__container__wrap__choose {
+  height: 70px;
+  width: 100%;
+  color: #A7A7A7;
+  padding: 0 62.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+
+.log__container__wrap__choose .rememberme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log__container__wrap__choose .rememberme p {
+  padding-left: 15px;
+}
+
+.log__container__wrap__choose .forget {
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.log__container__wrap__method {
+  width: 100%;
+  height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.log__container__wrap__method .method-google button {
+  background-color: #4266f5;
+  width: 200px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 50px;
+}
+
+.log__container__wrap__method .method-google button img {
+  border-radius: 50%;
+  width: 25px;
+  padding: 5px;
+  background-color: var(--white);
+}
+
+.log__container__wrap__method .method-google button:focus {
+  outline: none;
+}
+
+.log__container__wrap__method .method-facebook button {
+  background-color: #4295f5;
+  width: 200px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px;
+}
+
+.log__container__wrap__method .method-facebook button img {
+  width: 25px;
+}
+
+.log__container__wrap__method .method-facebook button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  .log__container__wrap__header {
+    padding-top: 20px;
+  }
+  .log__container__wrap__header h1 {
+    font-size: 24px;
+  }
+  .log__container__wrap__form {
+    height: 145px;
+  }
+  .log__container__wrap__form form .email {
+    margin-top: 16px;
+  }
+  .log__container__wrap__form form .password {
+    margin-top: 16px;
+  }
+  .log__container__wrap__form form label {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+  .log__container__wrap__form form input {
+    width: 226px;
+    height: 27px;
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input::-webkit-input-placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input:-ms-input-placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input::-ms-input-placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__form form input::placeholder {
+    font-size: 9px;
+  }
+  .log__container__wrap__button {
+    width: 100%;
+    height: 32px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .log__container__wrap__button .sign-in {
+    width: 226px;
+    height: 27px;
+    font-size: 9px;
+  }
+  .log__container__wrap__choose {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 40px;
+    height: 39px;
+    padding-left: 32px;
+    font-size: 9px;
+  }
+  .log__container__wrap__choose .rememberme p {
+    font-size: 9px;
+  }
+  .log__container__wrap__method {
+    width: 100%;
+    height: 130px;
+    padding: 0 30px;
+  }
+  .log__container__wrap__method .method-google button {
+    width: 110px;
+    height: 27px;
+    border-radius: 8px;
+    font-size: 10px;
+    padding: 0 22px;
+  }
+  .log__container__wrap__method .method-google button img {
+    border-radius: 50%;
+    width: 15px;
+    padding: 2px;
+  }
+  .log__container__wrap__method .method-facebook button {
+    width: 110px;
+    height: 27px;
+    font-size: 10px;
+    color: #ffffff;
+    padding: 0 18px;
+  }
+  .log__container__wrap__method .method-facebook button img {
+    width: 17px;
+  }
+}
+/*# sourceMappingURL=login.css.map */

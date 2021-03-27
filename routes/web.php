@@ -1,7 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers\Auth;
-// namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +19,17 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('auth/facebook', 'Auth\LoginController@facebookRedirect')->name('login.facebook');
-Route::get('auth/facebook/callback', 'Auth\LoginController@loginWithFacebook');
+Route::prefix('auth')->group(function(){
+    // Login with Facebook
+    Route::get('facebook', 'Auth\LoginController@facebookRedirect')->name('login.facebook');
+    Route::get('facebook/callback', 'Auth\LoginController@loginWithFacebook');
 
-Route::get('auth/google', 'Auth\LoginController@googleRedirect')->name('login.google');
-Route::get('auth/google/callback', 'Auth\LoginController@loginWithGoogle');
+    // Login with Google
+    Route::get('google', 'Auth\LoginController@googleRedirect')->name('login.google');
+    Route::get('google/callback', 'Auth\LoginController@loginWithGoogle');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+Route::middleware('auth', 'verified')->group(function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/event');
+});
