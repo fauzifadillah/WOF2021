@@ -119,7 +119,7 @@ body {
 .navbar__container .navbar__container__wrap .navbar__menu ul li a {
   text-decoration: none;
   color: var(--blue);
-  font-family: 'Gotham Black', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-weight: 500;
   font-size: 24px;
   cursor: pointer;
@@ -160,7 +160,6 @@ body {
           box-shadow: 5px 5px var(--red);
   color: var(--grey70);
   cursor: pointer;
-  text-decoration: none;
 }
 
 .navbar__container .navbar__container__wrap .navbar__button .navbar__button__signup {
@@ -178,7 +177,6 @@ body {
   background-color: var(--blue);
   color: var(--white);
   cursor: pointer;
-  text-decoration: none;
 }
 
 .navbar__container .navbar__container__wrap .navbar__user {
@@ -617,6 +615,148 @@ body {
     left: 0vw;
     -webkit-transition: ease-in-out 0.6s;
     transition: ease-in-out 0.6s;
+  }
+}
+
+.verif__container {
+  width: 100%;
+  padding: 50px 0 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.verif__container .verif__container__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  width: 960px;
+  height: 150px;
+  background-color: var(--white);
+  border: 2px solid var(--blue);
+  -webkit-box-shadow: 5px 5px var(--red);
+          box-shadow: 5px 5px var(--red);
+}
+
+.verif__container .verif__container__wrap .verif-name {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.verif__container .verif__container__wrap .verif-button button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 227px;
+  height: 63px;
+  background-color: var(--blue);
+  border: none;
+  color: var(--grey70);
+  cursor: pointer;
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+}
+
+.verif__container .verif__container__wrap .verif-button button p {
+  color: var(--white);
+  font-size: 18px;
+}
+
+.verif__container .verif__container__wrap .verif-button button:focus {
+  outline: none;
+}
+
+.verif__container .verif__container__wrap .verif-button button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+}
+
+@media (max-width: 1080px) {
+  .verif__container {
+    padding: 40px 0;
+  }
+  .verif__container .verif__container__wrap {
+    padding: 10px 20px;
+    width: 80.889vw;
+    height: 120px;
+  }
+  .verif__container .verif__container__wrap .verif-name {
+    padding: calc(40px - 3vw) 0;
+  }
+  .verif__container .verif__container__wrap .verif-name h1 {
+    font-size: 3.333vw;
+  }
+  .verif__container .verif__container__wrap .verif-name p {
+    font-size: 1.667vw;
+  }
+  .verif__container .verif__container__wrap .verif-button button {
+    width: 21.019vw;
+    height: 42px;
+  }
+  .verif__container .verif__container__wrap .verif-button button p {
+    font-size: 1.667vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .verif__container .verif__container__wrap .verif-name {
+    padding: calc(30px - 1.5vw) 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .verif__container {
+    padding: 20px 0;
+  }
+  .verif__container .verif__container__wrap {
+    padding: 10px 5px;
+    width: 80.889vw;
+    height: 80px;
+  }
+  .verif__container .verif__container__wrap .verif-name {
+    padding: calc(17.5px - 1.75vw) 0;
+  }
+  .verif__container .verif__container__wrap .verif-name h1 {
+    font-size: 3.333vw;
+  }
+  .verif__container .verif__container__wrap .verif-name p {
+    font-size: 1.667vw;
+  }
+  .verif__container .verif__container__wrap .verif-button button {
+    width: 21.019vw;
+    height: 32px;
+  }
+  .verif__container .verif__container__wrap .verif-button button p {
+    font-size: 1.667vw;
   }
 }
 

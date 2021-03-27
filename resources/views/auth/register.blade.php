@@ -3,9 +3,9 @@
 @section('title','SIGN UP')
 
 @push('css')
-  <link rel="stylesheet" href="/css/eventpage.css">
-  <link rel="stylesheet" href="/css/sign-container.css">
-  <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/eventpage.css">
+    <link rel="stylesheet" href="/css/sign-container.css">
+    <link rel="stylesheet" href="/css/signup.css">
 @endpush
 
 @section('content')
@@ -20,19 +20,19 @@
                         @csrf
                         <div class="form__group" style="margin-top: 0px;">
                             <label for="name">Name</label>
-                            <input type="text" id="text" name="name" placeholder="Name">
+                            <input type="text" id="text" name="name" placeholder="Name" value="{{ old('name') }}" required>
                         </div>
                         <div class="form__group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email">
+                            <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
                         </div>
                         <div class="form__group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="Password">
+                            <input type="password" id="password" name="password" placeholder="Password" required>
                         </div>
                         <div class="form__group">
                             <label for="confirm">Confirm Password</label>
-                            <input type="password" id="confirm" name="confirm" placeholder="Confirm Password">
+                            <input type="password" id="confirm" name="password_confirmation" placeholder="Confirm Password" required>
                         </div>
                     </form>
                 </div>

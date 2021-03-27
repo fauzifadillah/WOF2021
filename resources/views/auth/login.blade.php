@@ -3,9 +3,9 @@
 @section('title','SIGN IN')
 
 @push('css')
-  <link rel="stylesheet" href="/css/eventpage.css">
-  <link rel="stylesheet" href="/css/sign-container.css">
-  <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/eventpage.css">
+    <link rel="stylesheet" href="/css/sign-container.css">
+    <link rel="stylesheet" href="/css/login.css">
 @endpush
 
 @section('content')
@@ -20,11 +20,11 @@
                         @csrf
                         <div class="email">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email">
+                            <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
                         </div>
                         <div class="password">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="Password">
+                            <input type="password" id="password" name="password" placeholder="Password" required>
                         </div>
                     </form>
                 </div>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="log__container__wrap__method">
-                    <a class="method-google">
+                    <a class="method-google" href="{{ route('login.google') }}">
                         <button class="sign-in"> <img src="/css/assets/google.svg" alt="google"> Google</button>
                     </a>
                     <a class="method-facebook" href="{{ route('login.facebook') }}">

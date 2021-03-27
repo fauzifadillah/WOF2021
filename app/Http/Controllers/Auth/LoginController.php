@@ -45,10 +45,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request)
-    {
-        dd($request);
-    }
+    // public function login(Request $request)
+    // {
+    //     dd($request);
+    // }
 
     public function facebookRedirect()
     {

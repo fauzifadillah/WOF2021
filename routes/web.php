@@ -20,16 +20,17 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::prefix('auth')->group(function(){
-    // Login with Facebook
-    Route::get('facebook', 'Auth\LoginController@facebookRedirect')->name('login.facebook');
-    Route::get('facebook/callback', 'Auth\LoginController@loginWithFacebook');
-
     // Login with Google
     Route::get('google', 'Auth\LoginController@googleRedirect')->name('login.google');
     Route::get('google/callback', 'Auth\LoginController@loginWithGoogle');
+
+    // Login with Facebook
+    Route::get('facebook', 'Auth\LoginController@facebookRedirect')->name('login.facebook');
+    Route::get('facebook/callback', 'Auth\LoginController@loginWithFacebook');
 });
 
-Route::middleware('auth', 'verified')->group(function(){
+// Route::middleware('auth', 'verified')->group(function(){
     Route::get('/home', 'HomeController@index')->name('home');
-    // Route::get('/event');
-});
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::get('/event', 'EventController@index')->name('event');
+// });
