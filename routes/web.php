@@ -30,7 +30,10 @@ Route::prefix('auth')->group(function(){
 });
 
 // Route::middleware('auth', 'verified')->group(function(){
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/profile', 'ProfileController@index')->name('profile');
-    Route::get('/event', 'EventController@index')->name('event');
+    Route::get('home', 'HomeController@index')->name('home');
+    Route::get('profile', 'ProfileController@index')->name('profile');
+    Route::prefix('event')->group(function(){
+        Route::get('/', 'EventController@index')->name('event.index');
+        Route::get('{id}', 'EventController@show')->name('event.show');
+    });
 // });

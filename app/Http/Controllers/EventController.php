@@ -10,4 +10,9 @@ class EventController extends Controller
     {
         return view('events.index');
     }
+
+    public function show(Request $request)
+    {
+        return view('events.show');
+    }
 }

@@ -1,6 +1,6 @@
 .log__container__wrap__header {
   width: 100%;
-  height: 110px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,9 +35,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.log__container__wrap__form form .email {
+.log__container__wrap__form form .form-control {
+  width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,15 +51,36 @@
   margin-top: 10px;
 }
 
-.log__container__wrap__form form .password {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 30px;
+.log__container__wrap__form form .form-control img {
+  width: 25px;
+  position: absolute;
+  -webkit-transform: translate(360px, 44px);
+          transform: translate(360px, 44px);
+  visibility: hidden;
+}
+
+.log__container__wrap__form form .form-control small {
+  margin-top: 5px;
+  margin-left: 10px;
+  visibility: hidden;
+  color: #e74c3c;
+  font-size: 10px;
+}
+
+.log__container__wrap__form form .form-control.error small, .log__container__wrap__form form .form-control.error .wrong {
+  visibility: visible;
+}
+
+.log__container__wrap__form form .form-control.error input {
+  border-color: #e74c3c;
+}
+
+.log__container__wrap__form form .form-control.success .check {
+  visibility: visible;
+}
+
+.log__container__wrap__form form .form-control.success input {
+  border-color: #2ecc71;
 }
 
 .log__container__wrap__form form label {
@@ -95,7 +119,7 @@
 
 .log__container__wrap__button {
   width: 100%;
-  height: 60px;
+  height: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +129,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 60px;
 }
 
 .log__container__wrap__button .sign-in {
@@ -127,7 +150,7 @@
   height: 70px;
   width: 100%;
   color: #A7A7A7;
-  padding: 0 62.5px;
+  padding: 0 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,19 +259,26 @@
 
 @media screen and (max-width: 600px) {
   .log__container__wrap__header {
-    padding-top: 20px;
+    height: 85px;
   }
   .log__container__wrap__header h1 {
     font-size: 24px;
   }
   .log__container__wrap__form {
-    height: 145px;
+    height: 120px;
   }
-  .log__container__wrap__form form .email {
+  .log__container__wrap__form form .form-control {
+    width: 226px;
     margin-top: 16px;
   }
-  .log__container__wrap__form form .password {
-    margin-top: 16px;
+  .log__container__wrap__form form .form-control img {
+    width: 12px;
+    -webkit-transform: translate(205px, 26px);
+            transform: translate(205px, 26px);
+  }
+  .log__container__wrap__form form .form-control small {
+    font-size: 8px;
+    margin-top: 3px;
   }
   .log__container__wrap__form form label {
     font-size: 10px;
@@ -258,6 +288,7 @@
     width: 226px;
     height: 27px;
     font-size: 9px;
+    border-radius: 4px;
   }
   .log__container__wrap__form form input::-webkit-input-placeholder {
     font-size: 9px;
@@ -273,12 +304,8 @@
   }
   .log__container__wrap__button {
     width: 100%;
-    height: 32px;
-    margin-bottom: 20px;
+    height: 100px;
     padding: 0 10px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .log__container__wrap__button .sign-in {
     width: 226px;
@@ -286,6 +313,7 @@
     font-size: 9px;
   }
   .log__container__wrap__choose {
+    height: 50px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -299,7 +327,7 @@
   }
   .log__container__wrap__method {
     width: 100%;
-    height: 130px;
+    height: 100px;
     padding: 0 30px;
   }
   .log__container__wrap__method .method-google button {

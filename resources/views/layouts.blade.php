@@ -8,10 +8,10 @@
     <title>{{ config('app.name') }} · @yield('title')</title>
 
     @auth
-    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     @else
-    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     @endauth
     @stack('css')
 
@@ -53,7 +53,7 @@
                 <div></div>
                 <ul>
                     <li><a>EXHIBITION</a></li>
-                    <li><a>EVENT</a></li>
+                    <li><a href="{{ route('event.index') }}">EVENT</a></li>
                     <li><a>MARKET</a></li>
                 </ul>
             </div>
@@ -64,6 +64,7 @@
                 <img src="/css/assets/siku.svg" alt="siku">
                 <div class="nav-drop">
                     <a onclick="window.location='{{ route('profile') }}'">Profile</a>
+                    <a onclick="window.location='{{ route('profile') }}'">Leaderboards</a>
                     <a onclick="document.getElementById('logout-form').submit();">Log Out</a>
                 </div>
             </div>
@@ -104,7 +105,7 @@
     @yield('content')
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST">@csrf</form>
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/navbar.js') }}"></script>
+    @stack('js')
 </body>
 </html>

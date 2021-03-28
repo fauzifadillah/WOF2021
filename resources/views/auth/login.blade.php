@@ -18,13 +18,19 @@
                 <div class="log__container__wrap__form">
                     <form id="login" method="POST" action="{{ route('login') }}" enctype="multipart/form-data">
                         @csrf
-                        <div class="email">
+                        <div class="form-control">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
+                            <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                            <img class="check" src="/css/assets/check-mark.svg" alt="v">
+                            <img class="wrong" src="/css/assets/remove.svg" alt="x">
+                            <small></small>
                         </div>
-                        <div class="password">
+                        <div class="form-control">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <input type="password" id="password" name="password" placeholder="Password">
+                            <img class="check" src="/css/assets/check-mark.svg" alt="v">
+                            <img class="wrong" src="/css/assets/remove.svg" alt="x">
+                            <small></small>
                         </div>
                     </form>
                 </div>
@@ -41,14 +47,18 @@
                     </div>
                 </div>
                 <div class="log__container__wrap__method">
-                    <a class="method-google" href="{{ route('login.google') }}">
-                        <button class="sign-in"> <img src="/css/assets/google.svg" alt="google"> Google</button>
-                    </a>
-                    <a class="method-facebook" href="{{ route('login.facebook') }}">
-                        <button class="sign-in"> <img src="/css/assets/facebook.svg" alt="facebook">Facebook</button>
-                    </a>
+                    <div class="method-google">
+                        <button class="sign-in" onclick="window.location='{{ route('login.google') }}'"> <img src="/css/assets/google.svg" alt="google">Google</button>
+                    </div>
+                    <div class="method-facebook">
+                        <button class="sign-in" onclick="window.location='{{ route('login.facebook') }}'"> <img src="/css/assets/facebook.svg" alt="facebook">Facebook</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script src="{{ asset('js/login.js') }}"></script>
+@endpush

@@ -41,6 +41,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -51,40 +52,82 @@
                     <p>16 April 2021</p>
                 </div>
                 <div class="progressbar-line"></div>
+                <div class="progressbar-line"></div>
+                <div class="progressbar-line"></div>
                 <div class="progressbar-end">
                     <p>Load More</p>
                 </div>
                 <div class="progressbar-round-grid">
-                    <div class="round-box">
-                        <div class="round"></div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
                     </div>
-                    <div class="round-box">
-                        <div class="round"></div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
                     </div>
-                    <div class="round-box">
-                        <div class="round"></div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
                     </div>
-                    <div class="round-box">
-                        <div class="round"></div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
+                    </div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
+                    </div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
+                    </div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
+                    </div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
+                    </div>
+                    <div class="round-x">
+                        <div class="round-box">
+                            <div class="round"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="timeline-grid">
-                <div class="timeline-grid-item yes">
-                    <div class="timeline-box-img img-1">
-                        <div class="timeline-box-img-detail">
-                            <p>16 April 2021</p>
+                <a class="timeline-grid-x" href="{{ route('event.show', 1) }}">
+                    <div class="timeline-grid-item yes">
+                        <div class="timeline-box-img img-1">
+                            <div class="timeline-box-img-detail">
+                                <p>16:00 - 17:00</p>
+                            </div>
+                        </div>
+                        <div class="timeline-box-text">
+                            <h2>The Adams Live Music</h2>
+                            <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                            <p>Yesterday, 23:22</p>
                         </div>
                     </div>
-                    <div class="timeline-box-text">
-                        <h2>The Adams Live Music</h2>
-                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
-                        <p>Yesterday, 23:22</p>
-                    </div>
+                </a>
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
                 </div>
-                <div class="timeline-grid-item no"></div>
-                <div class="timeline-grid-item no"></div>
-                <div class="timeline-grid-item yes">
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>
+                <div class="timeline-grid-x">
                     <div class="timeline-grid-item yes">
                         <div class="timeline-box-img img-2">
                             <div class="timeline-box-img-detail">
@@ -98,7 +141,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-grid-item yes">
+
+                <div class="timeline-grid-x">
                     <div class="timeline-grid-item yes">
                         <div class="timeline-box-img img-3">
                             <div class="timeline-box-img-detail">
@@ -112,9 +156,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-grid-item no"></div>
-                <div class="timeline-grid-item no"></div>
-                <div class="timeline-grid-item yes">
+
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>
+
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>    
+
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item yes">
+                        <div class="timeline-box-img img-1">
+                            <div class="timeline-box-img-detail">
+                                <p>16 April 2021</p>
+                            </div>
+                        </div>
+                        <div class="timeline-box-text">
+                            <h2>The Adams Live Music</h2>
+                            <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                            <p>Yesterday, 23:22</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-grid-x">
                     <div class="timeline-grid-item yes">
                         <div class="timeline-box-img img-2">
                             <div class="timeline-box-img-detail">
@@ -129,9 +195,33 @@
                     </div>
                 </div>
 
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>
+
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>
+
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item yes">
+                        <div class="timeline-box-img img-3">
+                            <div class="timeline-box-img-detail">
+                                <p>16 April 2021</p>
+                            </div>
+                        </div>
+                        <div class="timeline-box-text">
+                            <h2>TALSK! with RUEDY</h2>
+                            <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                            <p>Yesterday, 23:22</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+
 
     <div class="oam__container">
         <div class="oam__container__wrap">
@@ -149,3 +239,8 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ asset('js/event.js') }}"></script>    
+@endpush
