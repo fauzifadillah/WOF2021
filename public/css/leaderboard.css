@@ -1,0 +1,207 @@
+.leaderboard__container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap {
+    padding: 50px 0;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header {
+    width: 100%;
+    height: 56px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap {
+    width: 100%;
+    height: 56px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-1 {
+    width: 27px;
+    height: 100%;
+    background-color: var(--red);
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-2 {
+    width: 378px;
+    height: 100%;
+    background-image: url("assets/bg-small-1.svg");
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 20px;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-2 p {
+    color: var(--white);
+    font-size: 33px;
+    font-weight: 500;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button {
+    -webkit-transition: ease 0.2s;
+    transition: ease 0.2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 227px;
+    height: 63px;
+    background-color: var(--white);
+    border: 2px solid var(--blue);
+    -webkit-box-shadow: 5px 5px var(--red);
+            box-shadow: 5px 5px var(--red);
+    color: var(--grey70);
+    cursor: pointer;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button:focus {
+    outline: none;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button:active {
+    -webkit-transition: ease 0.2s;
+    transition: ease 0.2s;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-player {
+    width: 100%;
+    margin-top: 30px;
+    table-layout: auto;
+    padding: 25px;
+    background-color: var(--white);
+    border: 1px solid #ddd;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-player table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr td, .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 30px;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--blue);
+    color: white;
+  }
+  
+  .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  @media (max-width: 768px) {
+    .leaderboard__container .leaderboard__container-wrap {
+      padding: 50px 0;
+      width: 86%;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header {
+      height: 42px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap {
+      height: 42px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-1 {
+      width: 22px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-2 {
+      width: 220px;
+      padding-left: 15px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-2 p {
+      font-size: 24px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button {
+      width: 170px;
+      height: 42px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr td, .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
+      padding: 10px;
+      font-size: 18px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+  
+  @media (max-width: 490px) {
+    .leaderboard__container .leaderboard__container-wrap {
+      padding: 50px 0;
+      width: 90%;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header {
+      height: 36px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap {
+      height: 36px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-1 {
+      width: 18px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-2 {
+      width: 130px;
+      padding-left: 8px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-head-wrap .leaderboard-header-2 p {
+      font-size: 16px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button {
+      width: 130px;
+      height: 36px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr td, .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
+      padding: 8px;
+      font-size: 12px;
+    }
+    .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+  /*# sourceMappingURL=leaderboard.css.map */

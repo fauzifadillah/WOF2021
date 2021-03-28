@@ -36,4 +36,5 @@ Route::prefix('auth')->group(function(){
         Route::get('/', 'EventController@index')->name('event.index');
         Route::get('{id}', 'EventController@show')->name('event.show');
     });
+    Route::get('leaderboard', 'LeaderboardController@index')->name('leaderboard.index');
 // });

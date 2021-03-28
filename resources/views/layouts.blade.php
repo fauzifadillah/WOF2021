@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="{{ asset('css/assets/logo-small.png') }}">
     <title>{{ config('app.name') }} · @yield('title')</title>
 
@@ -64,7 +65,7 @@
                 <img src="/css/assets/siku.svg" alt="siku">
                 <div class="nav-drop">
                     <a onclick="window.location='{{ route('profile') }}'">Profile</a>
-                    <a onclick="window.location='{{ route('profile') }}'">Leaderboards</a>
+                    <a onclick="window.location='{{ route('leaderboard.index') }}'">Leaderboards</a>
                     <a onclick="document.getElementById('logout-form').submit();">Log Out</a>
                 </div>
             </div>
