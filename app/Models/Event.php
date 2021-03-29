@@ -9,11 +9,6 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'type',
-        'timeline',
-        'category_id'
-    ];
+    protected $fillable = ['*'];
 
 }

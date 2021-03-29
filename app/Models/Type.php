@@ -11,6 +11,6 @@ class Type extends Model
 
     protected $fillable = [
         'name',
-        'trigger_id',
+        'trigger_id'
     ];
 }

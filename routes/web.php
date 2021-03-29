@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes(['verify' => true]);
 
 Route::prefix('auth')->group(function(){
@@ -29,11 +25,16 @@ Route::prefix('auth')->group(function(){
     Route::get('facebook/callback', 'Auth\LoginController@loginWithFacebook');
 });
 
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('event', 'EventController@index')->name('event.index');
+
 // Route::middleware('auth', 'verified')->group(function(){
-    Route::get('home', 'HomeController@index')->name('home');
     Route::get('profile', 'ProfileController@index')->name('profile');
     Route::prefix('event')->group(function(){
-        Route::get('/', 'EventController@index')->name('event.index');
+        Route::get('create', 'EventController@create')->name('event.create');
+        Route::get('store', 'EventController@store')->name('event.store');
+        Route::get('update', 'EventController@update')->name('event.update');
+        Route::get('data', 'EventController@data')->name('event.data');
         Route::get('{id}', 'EventController@show')->name('event.show');
     });
     Route::get('leaderboard', 'LeaderboardController@index')->name('leaderboard.index');

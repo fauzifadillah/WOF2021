@@ -23,7 +23,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'avatar',
         'facebook_id',
-        'google_id'
+        'google_id',
+        'roles_id'
     ];
 
     /**
@@ -44,4 +45,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles(){
+        return $this->belongsTo('App\Models\Role');
+    }
 }

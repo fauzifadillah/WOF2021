@@ -11,6 +11,6 @@ class Level extends Model
 
     protected $fillable = [
         'name',
-        'point',
+        'point'
     ];
 }

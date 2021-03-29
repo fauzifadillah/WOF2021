@@ -13,6 +13,6 @@ class Leaderboard extends Model
         'user_id',
         'total_point',
         'current_point',
-        'level_id',
+        'level_id'
     ];
 }

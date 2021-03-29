@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="{{ asset('css/assets/logo-small.png') }}">
-    <title>NobleUI Laravel Admin Dashboard Template</title>
+    <title>{{ config('app.name') }} · @yield('title')</title>
 
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
@@ -15,6 +15,7 @@
     <link href="{{ asset('assets/plugins/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" />
     @stack('css')
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" />
 </head>
 <body>
     <script src="{{ asset('assets/js/spinner.js') }}"></script>
@@ -22,14 +23,17 @@
     <div class="main-wrapper" id="app">
         @include('layouts.sidebar')
         <div class="page-wrapper">
-            @include('layout.header')
+            @include('layouts.header')
             <div class="page-content">
             @yield('content')
             </div>
-        @include('layout.footer')
+        @include('layouts.footer')
         </div>
     </div>
+    @include('layouts/modal')
 
+    <form id="logout-form" action="{{ route('logout') }}" method="POST">@csrf</form>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/template.js') }}"></script>

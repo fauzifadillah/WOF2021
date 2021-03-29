@@ -47,18 +47,19 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $messages = [
-            'email.required' => 'Email harus diisi',
-            'email.email' => 'Email tidak valid',
-            'email.exists' => "Email tidak ada",
-            'password.required' => 'Password harus diisi',
-            'password.min' => 'Password minimal 8 karakter'
-        ];
+        // $messages = [
+        //     'email.required' => 'Email harus diisi',
+        //     'email.email' => 'Email tidak valid',
+        //     'email.exists' => "Email tidak ada",
+        //     'password.required' => 'Password harus diisi',
+        //     'password.min' => 'Password minimal 8 karakter'
+        // ];
 
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:users,email',
             'password' => 'required|min:8'
-        ], $messages);
+        ]);
+        // ], $messages);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();

@@ -3,27 +3,38 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 
 form.addEventListener('submit', (e) => {
-    checkInputs();
-})
-
-function checkInputs() {
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
 
-    if (emailValue === '') {
+    if (emailValue === '' || passwordValue === ''){
         e.preventDefault()
-        setErrorFor(email, 'Email cannot be blank')
-    } else {
-        setSuccessFor(email);
-    }
+        if (emailValue === '') {
+            setErrorFor(email, 'Email cannot be blank')
+        } else {
+            setSuccessFor(email);
+        }
 
-    if (passwordValue === '') {
-        e.preventDefault()
-        setErrorFor(password, 'Password cannot be blank')
-    } else {
-        setSuccessFor(password);
+        if (passwordValue === '') {
+            setErrorFor(password, 'Password cannot be blank')
+        } else {
+            setSuccessFor(password);
+        }
     }
-}
+    else{
+        if($('#email').parent('.form-control').hasClass('error')){
+            $('#email').parent('.form-control').removeClass('error');
+        }
+        if($('#email').parent('.form-control').hasClass('success')){
+            $('#email').parent('.form-control').removeClass('success');
+        }
+        if($('#password').parent('.form-control').hasClass('error')){
+            $('#password').parent('.form-control').removeClass('error');
+        }
+        if($('#password').parent('.form-control').hasClass('success')){
+            $('#password').parent('.form-control').removeClass('success');
+        }
+    }
+})
 
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
@@ -36,3 +47,21 @@ function setSuccessFor(input) {
     const formControl = input.parentElement;
     formControl.className = 'form-control success';
 }
+
+$('#email').keypress(function(){
+    if($('#email').parent('.form-control').hasClass('error')){
+        $('#email').parent('.form-control').removeClass('error');
+    }
+    if($('#email').parent('.form-control').hasClass('success')){
+        $('#email').parent('.form-control').removeClass('success');
+    }
+})
+
+$('#password').keypress(function(){
+    if($('#password').parent('.form-control').hasClass('error')){
+        $('#password').parent('.form-control').removeClass('error');
+    }
+    if($('#password').parent('.form-control').hasClass('success')){
+        $('#password').parent('.form-control').removeClass('success');
+    }
+})

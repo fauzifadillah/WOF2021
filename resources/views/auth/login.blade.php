@@ -3,7 +3,7 @@
 @section('title','SIGN IN')
 
 @push('css')
-    <link rel="stylesheet" href="/css/eventpage.css">
+    <link rel="stylesheet" href="/css/event.css">
     <link rel="stylesheet" href="/css/sign-container.css">
     <link rel="stylesheet" href="/css/login.css">
 @endpush
@@ -18,19 +18,19 @@
                 <div class="log__container__wrap__form">
                     <form id="login" method="POST" action="{{ route('login') }}" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-control">
+                        <div class="form-control @error('email') error @enderror">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                            <input id="email" name="email" placeholder="Email" value="{{ old('email') }}">
                             <img class="check" src="/css/assets/check-mark.svg" alt="v">
                             <img class="wrong" src="/css/assets/remove.svg" alt="x">
-                            <small></small>
+                            <small>@error('email'){{ $message }}@enderror</small>
                         </div>
-                        <div class="form-control">
+                        <div class="form-control @error('password') error @enderror">
                             <label for="password">Password</label>
                             <input type="password" id="password" name="password" placeholder="Password">
                             <img class="check" src="/css/assets/check-mark.svg" alt="v">
                             <img class="wrong" src="/css/assets/remove.svg" alt="x">
-                            <small></small>
+                            <small>@error('password'){{ $message }}@enderror</small>
                         </div>
                     </form>
                 </div>
@@ -60,5 +60,6 @@
 @endsection
 
 @push('js')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/login.js') }}"></script>
 @endpush

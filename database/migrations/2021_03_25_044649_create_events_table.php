@@ -16,8 +16,12 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('type');
-            $table->dateTime('timeline');
+            $table->string('desc');
+            $table->string('type')->nullable();
+            $table->date('date');
+            $table->time('start');
+            $table->time('end');
+            $table->string('image')->nullable();
             $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
