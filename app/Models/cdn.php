@@ -9,5 +9,5 @@ class cdn extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['*'];
+    protected $guarded = [];
 }

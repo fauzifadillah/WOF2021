@@ -25,17 +25,45 @@ Route::prefix('auth')->group(function(){
     Route::get('facebook/callback', 'Auth\LoginController@loginWithFacebook');
 });
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('event', 'EventController@index')->name('event.index');
-
-// Route::middleware('auth', 'verified')->group(function(){
+Route::middleware('auth')->group(function(){
     Route::get('profile', 'ProfileController@index')->name('profile');
     Route::prefix('event')->group(function(){
         Route::get('create', 'EventController@create')->name('event.create');
-        Route::get('store', 'EventController@store')->name('event.store');
-        Route::get('update', 'EventController@update')->name('event.update');
+        Route::post('store', 'EventController@store')->name('event.store');
+        Route::get('edit/{id}', 'EventController@edit')->name('event.edit');
+        Route::put('update/{id}', 'EventController@update')->name('event.update');
+        Route::delete('delete/{id}', 'EventController@delete')->name('event.delete');
         Route::get('data', 'EventController@data')->name('event.data');
         Route::get('{id}', 'EventController@show')->name('event.show');
     });
-    Route::get('leaderboard', 'LeaderboardController@index')->name('leaderboard.index');
-// });
+    Route::prefix('category')->group(function(){
+        Route::get('create', 'CategoryController@create')->name('category.create');
+        Route::post('store', 'CategoryController@store')->name('category.store');
+        Route::get('edit/{id}', 'CategoryController@edit')->name('category.edit');
+        Route::put('update/{id}', 'CategoryController@update')->name('category.update');
+        Route::delete('delete/{id}', 'CategoryController@delete')->name('category.delete');
+        Route::get('data', 'CategoryController@data')->name('category.data');
+    });
+    Route::prefix('voucher')->group(function(){
+        Route::get('/', 'VoucherController@index')->name('voucher.index');
+        Route::get('create', 'VoucherController@create')->name('voucher.create');
+        Route::post('store', 'VoucherController@store')->name('voucher.store');
+        Route::get('edit/{id}', 'VoucherController@edit')->name('voucher.edit');
+        Route::put('update/{id}', 'VoucherController@update')->name('voucher.update');
+        Route::delete('delete/{id}', 'VoucherController@delete')->name('voucher.delete');
+        Route::get('data', 'VoucherController@data')->name('voucher.data');
+    });
+    Route::prefix('account')->group(function(){
+        Route::get('/', 'AccountController@index')->name('account.index');
+        Route::get('create', 'AccountController@create')->name('account.create');
+        Route::post('store', 'AccountController@store')->name('account.store');
+        Route::get('edit/{id}', 'AccountController@edit')->name('account.edit');
+        Route::put('update/{id}', 'AccountController@update')->name('account.update');
+        Route::delete('delete/{id}', 'AccountController@delete')->name('account.delete');
+        Route::get('data', 'AccountController@data')->name('account.data');
+    });
+});
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('event', 'EventController@index')->name('event.index');
+Route::get('leaderboard', 'LeaderboardController@index')->name('leaderboard.index');

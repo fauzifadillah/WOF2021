@@ -22,7 +22,8 @@ class CreateEventsTable extends Migration
             $table->time('start');
             $table->time('end');
             $table->string('image')->nullable();
-            $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('categories_id')->nullable()->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('cdn_id')->nullable()->references('id')->on('cdns')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@
                     <h1>SIGN IN</h1>
                 </div>
                 <div class="log__container__wrap__form">
-                    <form id="login" method="POST" action="{{ route('login') }}" enctype="multipart/form-data">
+                    <form id="login" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-control @error('email') error @enderror">
                             <label for="email">Email</label>

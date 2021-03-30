@@ -9,6 +9,9 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['*'];
+    protected $guarded = [];
 
+    public function categories(){
+        return $this->belongsTo('App\Models\Category', 'category_id');
+    }
 }

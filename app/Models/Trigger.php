@@ -9,8 +9,5 @@ class Trigger extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name_type',
-        'val'
-    ];
+    protected $guarded = [];
 }

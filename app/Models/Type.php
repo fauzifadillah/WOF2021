@@ -9,8 +9,5 @@ class Type extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'trigger_id'
-    ];
+    protected $guarded = [];
 }

@@ -16,7 +16,6 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('cdn_id')->references('id')->on('cdns')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

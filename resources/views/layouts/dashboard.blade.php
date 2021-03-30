@@ -8,18 +8,13 @@
     <link rel="icon" href="{{ asset('css/assets/logo-small.png') }}">
     <title>{{ config('app.name') }} · @yield('title')</title>
 
-    <!-- CSRF Token -->
-    <meta name="_token" content="{{ csrf_token() }}">
-
-    <link href="{{ asset('assets/fonts/feather-font/css/iconfont.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/plugins/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     @stack('css')
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <script src="{{ asset('assets/js/spinner.js') }}"></script>
-
+    <div class="block hidden"></div>
     <div class="main-wrapper" id="app">
         @include('layouts.sidebar')
         <div class="page-wrapper">
@@ -34,7 +29,11 @@
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST">@csrf</form>
     <script src="{{ asset('assets/js/app.js') }}"></script>
-    <script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script>
+    <script>
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+            $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        });
+    </script>
     <script src="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/template.js') }}"></script>
     @stack('js')

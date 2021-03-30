@@ -15,7 +15,7 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a onclick="document.getElementById('logout-form').submit();" class="nav-link">
-          <i data-feather="log-out"></i> 
+          <i class="link-icon fas fa-sign-out-alt"></i>
           <span>Log Out</span>
         </a>
       </li>

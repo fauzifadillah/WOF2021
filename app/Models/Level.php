@@ -9,8 +9,5 @@ class Level extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'point'
-    ];
+    protected $guarded = [];
 }
