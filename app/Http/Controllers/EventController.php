@@ -15,7 +15,8 @@ class EventController extends Controller
         if($user){
             if($user->roles->name=='Admin') return view('admin.events.index');
         }
-        return view('events.index');
+        $events = Event::get();
+        return view('events.index', ['events' => $events]);
     }
 
     public function show(Request $request)
@@ -52,7 +53,7 @@ class EventController extends Controller
         $model = Event::create([
             'name' => $request->name,
             'desc' => $request->desc,
-            'category_id' => $request->category,
+            'categories_id' => $request->category,
             'date' => $request->date,
             'start' => $request->start,
             'end' => $request->end,
@@ -90,7 +91,7 @@ class EventController extends Controller
         $model = Event::findOrFail($id)->update([
             'name' => $request->name,
             'desc' => $request->desc,
-            'category_id' => $request->category,
+            'categories_id' => $request->category,
             'date' => $request->date,
             'start' => $request->start,
             'end' => $request->end,

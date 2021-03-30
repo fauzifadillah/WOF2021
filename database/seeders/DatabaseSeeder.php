@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
         Role::insert([
             'name' => 'User'
         ]);
+        Role::insert([
+            'name' => 'Merchant'
+        ]);
         User::insert([
             'name' => 'Admin',
             'email' => 'admin@wof2021.com',

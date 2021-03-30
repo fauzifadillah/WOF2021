@@ -18,7 +18,6 @@ class CreateLeaderboardsTable extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('total_point');
             $table->integer('current_point');
-            $table->foreignId('level_id');
             $table->timestamps();
         });
     }

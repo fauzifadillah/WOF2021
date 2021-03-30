@@ -21,7 +21,7 @@
             <select id="category" type="text" class="form-control" name="category">
                 <option value="0" selected="selected" disabled>Select Category</option>
                 @foreach($categories as $category)
-                <option value="{{$category->id}}" @if($category->id == $model->category_id) selected="selected" @endif>{{$category->name}}</option>
+                <option value="{{$category->id}}" @if($category->id == $model->categories_id) selected="selected" @endif>{{$category->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -40,8 +40,8 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close"></button>
         <button type="submit" class="btn btn-primary" id="modal-save"></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close"></button>
     </div>
 
 </form>

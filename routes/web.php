@@ -34,7 +34,6 @@ Route::middleware('auth')->group(function(){
         Route::put('update/{id}', 'EventController@update')->name('event.update');
         Route::delete('delete/{id}', 'EventController@delete')->name('event.delete');
         Route::get('data', 'EventController@data')->name('event.data');
-        Route::get('{id}', 'EventController@show')->name('event.show');
     });
     Route::prefix('category')->group(function(){
         Route::get('create', 'CategoryController@create')->name('category.create');
@@ -66,4 +65,5 @@ Route::middleware('auth')->group(function(){
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('event', 'EventController@index')->name('event.index');
+Route::get('event/show/{id}', 'EventController@show')->name('event.show');
 Route::get('leaderboard', 'LeaderboardController@index')->name('leaderboard.index');
