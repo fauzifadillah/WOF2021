@@ -9,7 +9,6 @@
 @section('content')
 <div class="commercial__container">
     <div class="commercial__container-wrap">
-
         <div class="commercial__section1">
             <div class="commercial__section1-left">
                 <h2>Welcome To</h2>
@@ -42,18 +41,11 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
-<!--------------------------------- COMMERCIAL END  --------------------------------->
-
-
-<!-- TIMELINE -->
-
 <div class="timeline__container">
     <div class="timeline__container__wrap">
-
         <div class="timeline-progressbar">
             <div class="progressbar-header">
                 <p>16 April 2021</p>
@@ -90,31 +82,11 @@
                         <div class="round"></div>
                     </div>
                 </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
             </div>
         </div>
 
         <div class="timeline-grid">
-            @foreach($events as $event)
+            @foreach($events as $index => $event)
             <a class="timeline-grid-x" href="{{ route('event.show', $event->id) }}">
                 <div class="timeline-grid-item yes">
                     <div class="timeline-box-img img-1">
@@ -130,112 +102,42 @@
                     </div>
                 </div>
             </a>
+
+            @if($index%2==0)
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
+                </div>
+            @endif
             @endforeach
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item no"></div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item no"></div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item yes">
-                    <div class="timeline-box-img img-2">
-                        <img src="/css/assets/timeline-1.jpg" alt="imageku">
-                        <div class="timeline-box-img-detail">
-                            <p>16 April 2021</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box-text">
-                        <h2>LIVE FADE CONTESET</h2>
-                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
-                        <p>Yesterday, 23:22</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item yes">
-                    <div class="timeline-box-img img-3">
-                        <div class="timeline-box-img-detail">
-                            <p>16 April 2021</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box-text">
-                        <h2>TALSK! with RUEDY</h2>
-                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
-                        <p>Yesterday, 23:22</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item no"></div>
-            </div>
-
-            <!-- COBA 1 -->
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item no"></div>
-            </div>    
-
-            <div class="timeline-grid-x">
+            @foreach($events as $index => $event)
+            <a class="timeline-grid-x" href="{{ route('event.show', $event->id) }}">
                 <div class="timeline-grid-item yes">
                     <div class="timeline-box-img img-1">
+                        <img src="{{ $event->image}}" alt="imageku">
                         <div class="timeline-box-img-detail">
-                            <p>16 April 2021</p>
+                            <p>{{ date('H:i', strtotime($event->start)) }} - {{ date('H:i', strtotime($event->end)) }}</p>
                         </div>
                     </div>
                     <div class="timeline-box-text">
-                        <h2>The Adams Live Music</h2>
-                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
-                        <p>Yesterday, 23:22</p>
+                        <h2>{{ $event->name }}</h2>
+                        <p>{{ $event->desc }}</p>
+                        <p>{{ $event->updated_at->diffForHumans()  }}</p>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item yes">
-                    <div class="timeline-box-img img-2">
-                        <div class="timeline-box-img-detail">
-                            <p>16 April 2021</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box-text">
-                        <h2>LIVE FADE CONTESET</h2>
-                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
-                        <p>Yesterday, 23:22</p>
-                    </div>
+            @if($index%2==0)
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
                 </div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item no"></div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item no"></div>
-            </div>
-
-            <div class="timeline-grid-x">
-                <div class="timeline-grid-item yes">
-                    <div class="timeline-box-img img-3">
-                        <div class="timeline-box-img-detail">
-                            <p>16 April 2021</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box-text">
-                        <h2>TALSK! with RUEDY</h2>
-                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
-                        <p>Yesterday, 23:22</p>
-                    </div>
+                <div class="timeline-grid-x">
+                    <div class="timeline-grid-item no"></div>
                 </div>
-            </div>            
-
-            <!-- END COBA 1 -->
-
+            @endif
+            @endforeach
         </div>
     </div>
 </div>

@@ -26,7 +26,7 @@ Route::prefix('auth')->group(function(){
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('profile', 'ProfileController@index')->name('profile');
+    Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::prefix('event')->group(function(){
         Route::get('create', 'EventController@create')->name('event.create');
         Route::post('store', 'EventController@store')->name('event.store');

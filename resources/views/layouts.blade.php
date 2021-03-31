@@ -32,14 +32,17 @@
                     <li><a>EVENT</a></li>
                     <li><a>MARKET</a></li>
                 </ul>
+                @auth
+                @else
                 <div class="navbar__content__button">
-                    <a class="navbar__content__button-signin" href="{{ request()->is('login') ? '#' : '/login' }}">
+                    <a class="navbar__content__button-signin" href="{{ request()->is('login') ? '#' : route('login') }}">
                         <p>SIGN IN</p>
                     </a>
                     <a class="navbar__content__button-signup" href="{{ request()->is('register') ? '#' : route('register') }}">
                         <p>SIGN UP</p>
                     </a>
                 </div>
+                @endauth
             </div>
         </div>
 
@@ -54,7 +57,7 @@
                 <div></div>
                 <ul>
                     <li><a>EXHIBITION</a></li>
-                    <li><a href="{{ route('event.index') }}">EVENT</a></li>
+                    <li><a href="{{ request()->is('event') ? '#' : route('event.index') }}">EVENT</a></li>
                     <li><a>MARKET</a></li>
                 </ul>
             </div>
@@ -64,10 +67,20 @@
                 <img src="/css/assets/user.svg" alt="user">
                 <img src="/css/assets/siku.svg" alt="siku">
                 <div class="nav-drop">
-                    <a onclick="window.location='{{ route('profile') }}'">Profile</a>
-                    <a onclick="window.location='{{ route('leaderboard.index') }}'">Leaderboards</a>
+                    <a onclick="window.location='{{ request()->is('profile') ? '#' : route('profile.index') }}'">Profile</a>
+                    <a onclick="window.location='{{ request()->is('leaderboard') ? '#' : route('leaderboard.index') }}'">Leaderboards</a>
                     <a onclick="document.getElementById('logout-form').submit();">Log Out</a>
                 </div>
+            </div>
+            <div class="navbar__user">
+                <a href="{{ request()->is('profile') ? '#' : route('profile.index') }}">
+                    <img src="/css/assets/user.svg" alt="user">
+                </a>
+            </div>
+            <div class="navbar__cup">
+                <a href="{{ request()->is('leaderboard') ? '#' : route('leaderboard.index') }}">
+                    <img src="/css/assets/cup.svg" alt="cup">
+                </a>
             </div>
             @else
             <div class="navbar__button">
@@ -79,9 +92,6 @@
                 </a>
             </div>
             @endauth
-            <div class="navbar__user">
-                <img src="/css/assets/user.svg" alt="user">
-            </div>
         </div>
     </div>
 

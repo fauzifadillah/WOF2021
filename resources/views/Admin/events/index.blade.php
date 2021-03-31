@@ -139,6 +139,7 @@
           })
         },
         error: function(xhr){
+          $('.fa-pulse').remove();
           var res = xhr.responseJSON;
           if ($.isEmptyObject(res) == false) {
             form.find('.invalid-feedback').remove();
@@ -198,6 +199,7 @@
               })
             },
             error: function(xhr){
+              $('.fa-pulse').remove();
               swal({
                 type: 'error',
                 title: 'Oops...',
