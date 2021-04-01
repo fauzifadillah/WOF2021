@@ -26,7 +26,16 @@ Route::prefix('auth')->group(function(){
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('profile', 'ProfileController@index')->name('profile.index');
+    Route::prefix('profile')->group(function(){
+        Route::get('/', 'ProfileController@index')->name('profile.index');
+        Route::get('edit', 'ProfileController@edit')->name('profile.edit');
+        Route::get('password', 'ProfileController@password')->name('profile.password');
+        Route::get('voucher', 'ProfileController@voucher')->name('profile.voucher');
+        Route::put('update', 'ProfileController@update')->name('profile.update');
+        Route::put('password/update', 'ProfileController@updatePassword')->name('profile.updatePassword');
+        Route::post('voucher/reedem', 'ProfileController@redeemVoucher')->name('profile.redeemVoucher');
+    });
+
     Route::prefix('event')->group(function(){
         Route::get('create', 'EventController@create')->name('event.create');
         Route::post('store', 'EventController@store')->name('event.store');

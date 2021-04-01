@@ -97,7 +97,7 @@
                     </div>
                     <div class="timeline-box-text">
                         <h2>{{ $event->name }}</h2>
-                        <p>{{ $event->desc }}</p>
+                        <p>{{ implode(' ', array_slice(str_word_count($event->desc,1), 0, 15)) }}</p>
                         <p>{{ $event->updated_at->diffForHumans()  }}</p>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="timeline-box-text">
                         <h2>{{ $event->name }}</h2>
-                        <p>{{ $event->desc }}</p>
+                        <p>{{ implode(' ', array_slice(str_word_count($event->desc,1), 0, 15)) }}</p>
                         <p>{{ $event->updated_at->diffForHumans()  }}</p>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<form class="form" method="POST" action="{{ $model->exists ? route('event.update', $model->id) : route('event.store') }}" enctype="multipart/form-data">
+<form id="form_modal" class="form" method="POST" action="{{ $model->exists ? route('event.update', $model->id) : route('event.store') }}" enctype="multipart/form-data">
     @csrf {{ method_field($model->exists ? 'PUT' : 'POST') }}
 
     <div class="modal-header">
@@ -9,12 +9,12 @@
     </div>
     <div class="modal-body">
         <div class="form-group">
-            <label for="name" class="control-label">Name</label>
+            <label for="name" class="control-label">Title</label>
             <input id="name" type="text" class="form-control" name="name" value="{{$model->name}}" placeholder="Name">
         </div>
         <div class="form-group">
             <label for="desc" class="control-label">Description</label>
-            <input id="desc" type="text" class="form-control" name="desc" value="{{$model->desc}}" placeholder="Description">
+            <textarea form ="form_modal" id="desc" class="form-control" name="desc" placeholder="Description">{{$model->desc}}</textarea>
         </div>
         <div class="form-group">
             <label for="category" class="control-label">Category</label><br>
@@ -43,5 +43,8 @@
         <button type="submit" class="btn btn-primary" id="modal-save"></button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-close"></button>
     </div>
+
+    <script type="text/javascript">
+    </script>
 
 </form>

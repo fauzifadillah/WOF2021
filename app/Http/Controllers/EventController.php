@@ -19,9 +19,10 @@ class EventController extends Controller
         return view('events.index', ['events' => $events]);
     }
 
-    public function show(Request $request)
+    public function show($id)
     {
-        return view('events.show');
+        $model = Event::find($id);
+        return view('events.show', ['model' => $model]);
     }
 
     public function create()
@@ -110,6 +111,9 @@ class EventController extends Controller
     {
         $model = Event::with('categories')->get();
         return DataTables::of($model)
+            ->editColumn('desc', function($model){
+                return implode(' ', array_slice(str_word_count($model->desc,1), 0, 5));
+            })
             ->addColumn('action', function($model){
             return '<div class="btn-group" role="group">
                         <button type="button" href="'.route('event.edit', $model->id).'" class="btn btn-primary btn-sm modal-show edit" name="Edit '.$model->name.'" data-toggle="modal" data-target="#modal">Edit</button>

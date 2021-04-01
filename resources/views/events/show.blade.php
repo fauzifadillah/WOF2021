@@ -12,9 +12,9 @@
         <div class="detail1__container-wrap">
             <div class="detail1-img">
                 <div class="detail1-img-header">
-                    <h1>THE ADAMS LIVE MUSIC!</h1>
-                    <h3>CATEGORY : MUSIC</h3>
-                    <p>21 April, 2021 - 16:00 - 17:00</p>
+                    <h1>{{ $model->name }}</h1>
+                    <h3>CATEGORY : {{ $model->categories->name }}</h3>
+                    <p>{{ date('d M, Y', strtotime($model->date)).' - '.date('H:i', strtotime($model->start)).' - '.date('H:i', strtotime($model->end)) }}</p>
                 </div>
                 <div class="detail1-img-button">
                     <div class="detail1-img-button-signin">
@@ -27,15 +27,14 @@
             </div>
 
             <div class="detail1-fake-text">
-                <h1>THE ADAMS LIVE MUSIC!</h1>
-                <h3>CATEGORY : MUSIC</h3>
-                <p>21 April, 2021 - 16:00 - 17:00</p>
+                <h1>{{ $model->name }}</h1>
+                <h3>CATEGORY : {{ $model->categories->name }}</h3>
+                <p>{{ date('d M, Y', strtotime($model->date)).' - '.date('H:i', strtotime($model->start)).' - '.date('H:i', strtotime($model->end)) }}</p>
             </div>
 
             <div class="detail1-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>{{ $model->desc }}</p>
+                {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> --}}
             </div>
 
             <div class="detail1-fake-button">
@@ -74,5 +73,5 @@
 
 @push('js')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ 'js/event.js') }}"></script>    
+    <script src="{{ asset('js/event.js') }}"></script>    
 @endpush
