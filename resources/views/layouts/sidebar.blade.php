@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
       <a href="#" class="sidebar-brand">
-        <img src="{{ asset('css/assets/logo.svg') }}" alt="logo" width="30" height="30"> WOF<span>2021</span>
+        <img src="/css/assets/logo.svg" alt="logo" width="30" height="30"> WOF<span>2021</span>
       </a>
       <div class="sidebar-toggler not-active">
         <span></span>

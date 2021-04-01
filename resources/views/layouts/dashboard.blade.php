@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="{{ asset('css/assets/logo-small.png') }}">
+    <link rel="icon" href="/css/assets/logo-small.png">
     <title>{{ config('app.name') }} · @yield('title')</title>
 
-    <link href="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet"/>
+    <link href="/assets/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     @stack('css')
-    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" />
+    <link href="/assets/css/app.css" rel="stylesheet" />
 </head>
 <body>
     <div class="block hidden"></div>
@@ -34,8 +34,8 @@
             $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
         });
     </script>
-    <script src="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/template.js') }}"></script>
+    <script src="/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/assets/js/template.js"></script>
     @stack('js')
 </body>
 </html>

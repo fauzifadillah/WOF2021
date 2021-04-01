@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="{{ asset('css/assets/logo-small.png') }}">
+    <link rel="icon" href="/css/assets/logo-small.png">
     <title>{{ config('app.name') }} · @yield('title')</title>
 
     @auth
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     @else
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="/css/home.css">
     @endauth
     @stack('css')
 
@@ -24,7 +24,7 @@
     <div class="navbar__container">
         <div class="navbar__content">
             <div class="navbar__content__close">
-                <img src="{{ asset('css/assets/cancel.svg') }}" alt="close">
+                <img src="/css/assets/cancel.svg" alt="close">
             </div>
             <div class="navbar__content__detail">
                 <ul>
@@ -48,10 +48,10 @@
 
         <div class="navbar__container__wrap">
             <div class="navbar__hamburger">  
-                <img src="{{ asset('css/assets/hamburger.svg') }}" alt="">
+                <img src="/css/assets/hamburger.svg" alt="">
             </div>
             <a class="navbar__logo" href="{{ request()->is('/') ? '#' : '/' }}">
-                <img src="{{ asset('css/assets/logo.svg') }}" alt="logo">
+                <img src="/css/assets/logo.svg" alt="logo">
             </a>
             <div class="navbar__menu">
                 <div></div>
@@ -84,7 +84,7 @@
             </div>
             @else
             <div class="navbar__button">
-                <a class="navbar__button__signin" href="{{ request()->is('login') ? '#' : '/login' }}">
+                <a class="navbar__button__signin" href="{{ request()->is('login') ? '#' : route('login') }}">
                     <p>SIGN IN</p>
                 </a>
                 <a class="navbar__button__signup" href="{{ request()->is('register') ? '#' : route('register') }}">
@@ -116,7 +116,7 @@
     @yield('content')
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST">@csrf</form>
-    <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="/js/navbar.js"></script>
     @stack('js')
 </body>
 </html>

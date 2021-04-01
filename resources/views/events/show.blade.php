@@ -49,11 +49,6 @@
         </div>
     </div>
 
-    <!-- END DETAIL_1 -->
-
-
-    <!-- OFFICIAL AND MEDIA -->
-
     <div class="oam__container">
         <div class="oam__container__wrap">
             <div class="oam-official">
@@ -73,5 +68,5 @@
 
 @push('js')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{{ asset('js/event.js') }}"></script>    
+    <script src="/js/event.js"></script>    
 @endpush

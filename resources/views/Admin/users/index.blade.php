@@ -3,7 +3,7 @@
 @section('title','EVENT')
 
 @push('css')
-  <link rel="stylesheet" href="{{ asset('assets/DataTables/DataTables-1.10.23/css/dataTables.bootstrap4.css') }}">
+  <link rel="stylesheet" href="/assets/DataTables/DataTables-1.10.23/css/dataTables.bootstrap4.css">
 @endpush
 
 @section('content')
@@ -30,8 +30,8 @@
 
 @push('js')
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="{{ asset('assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js') }}"></script>
-  <script src="{{ asset('assets/DataTables/DataTables-1.10.23/js/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="/assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/DataTables/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
   <script>
     $('#table').DataTable({
       responsive: true,
