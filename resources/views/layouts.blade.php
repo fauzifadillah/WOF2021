@@ -85,10 +85,10 @@
             @else
             <div class="navbar__button">
                 <a class="navbar__button__signin" href="{{ request()->is('login') ? '#' : route('login') }}">
-                    <p>SIGN IN</p>
+                    SIGN IN
                 </a>
                 <a class="navbar__button__signup" href="{{ request()->is('register') ? '#' : route('register') }}">
-                    <p>SIGN UP</p>
+                    SIGN UP
                 </a>
             </div>
             @endauth

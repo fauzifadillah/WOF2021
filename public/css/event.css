@@ -76,49 +76,27 @@
   cursor: pointer;
 }
 
+.timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line-first {
+  height: 41px;
+  width: 4px;
+  background-color: var(--red);
+}
+
 .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
-  height: 1325px;
+  height: 420px;
   width: 4px;
   background-color: var(--blue);
   display: none;
 }
 
-.timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid {
-  display: -ms-grid;
-  display: grid;
-  position: absolute;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 20;
-  height: 1325px;
-  padding-top: 50px;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-}
-
-.timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-x {
-  display: none;
-}
-
-.timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: auto;
-  height: 410.82px;
-}
-
-.timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box .round {
+.timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line .progress-bar-round {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: var(--red);
+  position: absolute;
+  -webkit-transform: translate(-10px, 0);
+          transform: translate(-10px, 0);
 }
 
 .timeline__container .timeline__container__wrap .timeline-grid {
@@ -136,8 +114,6 @@
 
 .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-x {
   display: none;
-  text-decoration: none;
-  z-index: 11;
 }
 
 .timeline__container .timeline__container__wrap .timeline-grid .no {
@@ -163,33 +139,29 @@
       flex-wrap: nowrap;
 }
 
-.timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img img {
-  /* background-image: url("assets/timeline-1.jpg"); */
-  width: 100%;
-  border-radius: 12px;
-}
-.timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img.img-1 {
-  /* background-image: url("assets/timeline-1.jpg"); */
+.timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img.img-1 img {
   width: 100%;
 }
 
 .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img.img-2 {
-  width: 100%;
-  /* background-image: url("assets/timeline-2.jpg"); */
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
 
-.timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img.img-3 {
+.timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img.img-2 img {
   width: 100%;
-  /* background-image: url("assets/timeline-3.jpg"); */
+}
+
+.timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img.img-3 img {
+  width: 100%;
 }
 
 .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img {
   width: 405px;
   height: 266px;
-  /* width: 100%; */
+  background-size: cover;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,14 +179,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  z-index: 100;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  z-index: 2;
 }
 
 .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img .timeline-box-img-detail p {
@@ -293,41 +265,16 @@
     font-weight: 700;
     color: var(--white);
   }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
-    height: 1150px;
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line-first {
+    height: 40px;
     width: 4px;
-    background-color: var(--blue);
   }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid {
-    display: -ms-grid;
-    display: grid;
-    position: absolute;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    z-index: 20;
-    height: 1065px;
-    padding-top: 60px;
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
+    height: 365px;
+    width: 4px;
   }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: auto;
-    height: 355px;
-  }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box .round {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--red);
+  .timeline__container .timeline__container__wrap .no {
+    display: none;
   }
   .timeline__container .timeline__container__wrap .timeline-grid {
     display: -ms-grid;
@@ -397,10 +344,13 @@
     font-weight: 700;
     color: var(--white);
   }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
-    height: 1150px;
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line-first {
+    height: 40px;
     width: 4px;
-    background-color: var(--blue);
+  }
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
+    height: 365px;
+    width: 4px;
   }
   .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid {
     display: -ms-grid;
@@ -475,20 +425,19 @@
   .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-header p, .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-end p {
     font-size: 10px;
   }
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line-first {
+    height: 35px;
+    width: 4px;
+  }
   .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
-    height: 950px;
+    height: 335px;
+    width: 4px;
   }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid {
-    height: 900px;
-    padding-top: 60px;
-  }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box {
-    height: 295px;
-  }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box .round {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line .progress-bar-round {
+    width: 18px;
+    height: 18px;
+    -webkit-transform: translate(-6px, 0);
+            transform: translate(-6px, 0);
   }
   .timeline__container .timeline__container__wrap .timeline-grid {
     display: -ms-grid;
@@ -499,7 +448,7 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    grid-gap: 10px 0;
+    grid-gap: 0 0;
   }
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item.no {
     display: none;
@@ -507,10 +456,10 @@
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item {
     width: 71.186vw;
     height: 283px;
+    margin-bottom: 50px;
   }
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img {
     width: 71.186vw;
-    height: 283px;
   }
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img .timeline-box-img-detail {
     width: 86px;
@@ -550,20 +499,19 @@
   .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-header p, .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-end p {
     font-size: 7px;
   }
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line-first {
+    height: 15px;
+    width: 4px;
+  }
   .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line {
-    height: 800px;
+    height: 280px;
+    width: 4px;
   }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid {
-    height: 750px;
-    padding-top: 35px;
-  }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box {
-    height: 260px;
-  }
-  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-round-grid .round-box .round {
+  .timeline__container .timeline__container__wrap .timeline-progressbar .progressbar-line .progress-bar-round {
     width: 16px;
     height: 16px;
-    border-radius: 50%;
+    -webkit-transform: translate(-6px, 0);
+            transform: translate(-6px, 0);
   }
   .timeline__container .timeline__container__wrap .timeline-grid {
     display: -ms-grid;
@@ -574,7 +522,6 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    grid-gap: 10px 0;
   }
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item.no {
     display: none;
@@ -582,10 +529,11 @@
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item {
     width: 66.147vw;
     height: 250px;
+    margin-bottom: 30px;
   }
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img {
     width: 66.147vw;
-    height: 200px;
+    height: 150px;
   }
   .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-item .timeline-box-img .timeline-box-img-detail {
     width: 80px;

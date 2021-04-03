@@ -10,7 +10,6 @@
 
 body {
   background-image: url("assets/background3.png");
-  background-repeat: repeat-y;
 }
 
 @media (max-width: 590px) {
@@ -361,7 +360,7 @@ body {
     font-size: 18px;
   }
   .navbar__container .navbar__content .navbar__content__detail ul li:hover {
-    background-color: var(--grey70);
+    background-color: #dadada;
   }
   .navbar__container .navbar__content .navbar__content__detail .navbar__content__button {
     display: -webkit-box;
@@ -521,9 +520,6 @@ body {
   .navbar__container .navbar__content .navbar__content__detail ul li a {
     font-size: 18px;
   }
-  .navbar__container .navbar__content .navbar__content__detail ul li:hover {
-    background-color: var(--grey70);
-  }
   .navbar__container .nav-active {
     display: block;
     left: 0vw;
@@ -574,9 +570,6 @@ body {
   }
   .navbar__container .navbar__content .navbar__content__detail ul li a {
     font-size: 14px;
-  }
-  .navbar__container .navbar__content .navbar__content__detail ul li:hover {
-    background-color: var(--grey70);
   }
   .navbar__container .navbar__content .navbar__content__detail .navbar__content__button {
     width: 100%;

@@ -50,38 +50,27 @@
             <div class="progressbar-header">
                 <p>16 April 2021</p>
             </div>
-            <div class="progressbar-line"></div>
-            <div class="progressbar-line"></div>
-            <div class="progressbar-line"></div>
+            <div class="progressbar-line-first"> </div>
+            <div class="progressbar-line">
+                <div class="progress-bar-round"></div>
+            </div>
+            <div class="progressbar-line">
+                <div class="progress-bar-round"></div>
+            </div>
+            <div class="progressbar-line">
+                <div class="progress-bar-round"></div>
+            </div>
+            <div class="progressbar-line">
+                <div class="progress-bar-round"></div>
+            </div>
+            <div class="progressbar-line">
+                <div class="progress-bar-round"></div>
+            </div>
+            <div class="progressbar-line">
+                <div class="progress-bar-round"></div>
+            </div>
             <div class="progressbar-end">
                 <p>Load More</p>
-            </div>
-            <div class="progressbar-round-grid">
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
-                <div class="round-x">
-                    <div class="round-box">
-                        <div class="round"></div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -102,33 +91,6 @@
                     </div>
                 </div>
             </a>
-
-            @if($index%2==0)
-                <div class="timeline-grid-x">
-                    <div class="timeline-grid-item no"></div>
-                </div>
-                <div class="timeline-grid-x">
-                    <div class="timeline-grid-item no"></div>
-                </div>
-            @endif
-            @endforeach
-            @foreach($events as $index => $event)
-            <a class="timeline-grid-x" href="{{ route('event.show', $event->id) }}">
-                <div class="timeline-grid-item yes">
-                    <div class="timeline-box-img img-1">
-                        <img src="{{ $event->image}}" alt="imageku">
-                        <div class="timeline-box-img-detail">
-                            <p>{{ date('H:i', strtotime($event->start)) }} - {{ date('H:i', strtotime($event->end)) }}</p>
-                        </div>
-                    </div>
-                    <div class="timeline-box-text">
-                        <h2>{{ $event->name }}</h2>
-                        <p>{{ implode(' ', array_slice(str_word_count($event->desc,1), 0, 15)) }}</p>
-                        <p>{{ $event->updated_at->diffForHumans()  }}</p>
-                    </div>
-                </div>
-            </a>
-
             @if($index%2==0)
                 <div class="timeline-grid-x">
                     <div class="timeline-grid-item no"></div>

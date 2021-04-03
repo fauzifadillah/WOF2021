@@ -24,7 +24,48 @@
 }
 
 .navbar__button-1 .nav-drop {
+    width: 100%;
     display: none;
+    background-color: #f7f7f7;
+}
+
+.navbar__button-1 .nav-drop ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    list-style: none;
+    background-color: #f7f7f7;
+}
+
+.navbar__button-1 .nav-drop ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    padding: 25px 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--blue);
+    font-weight: 500;
+    font-family: 'Gotham', sans-serif;
+}
+  
+.navbar__button-1 .nav-drop ul li:hover {
+    background-color: #dadada;
 }
 
 .navbar__button-1:hover .nav-drop {
@@ -42,14 +83,18 @@
 }
 
 .navbar__button-1 .nav-drop a {
-    padding: 13px 0;
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Gotham', sans-serif;
+    padding: 21px 0 7px 0;
     width: 100%;
     text-align: center;
     cursor: pointer;
 }
 
 .navbar__button-1 .nav-drop a:hover {
-    background-color: #7f7f7f;
+    background-color: #dadada;
 }
 
 .navbar__cup {
