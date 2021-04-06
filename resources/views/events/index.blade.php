@@ -75,7 +75,7 @@
         </div>
 
         <div class="timeline-grid">
-            @foreach($events as $index => $event)
+            {{-- @foreach($events as $index => $event)
             <a class="timeline-grid-x" href="{{ route('event.show', $event->id) }}">
                 <div class="timeline-grid-item yes">
                     <div class="timeline-box-img img-1">
@@ -99,7 +99,130 @@
                     <div class="timeline-grid-item no"></div>
                 </div>
             @endif
-            @endforeach
+            @endforeach --}}
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item yes">
+                    <div class="timeline-box-img img-1">
+                        <img src="/css/assets/timeline-1.jpg" alt="assets1">
+                        <div class="timeline-box-img-detail">
+                            <p>16 April 2021</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box-text">
+                        <h2>The Adams Live Music</h2>
+                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                        <p>Yesterday, 23:22</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item no"></div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item no"></div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item yes">
+                    <div class="timeline-box-img img-2">
+                        <img src="/css/assets/timeline-1.jpg" alt="assets1">
+                        <div class="timeline-box-img-detail">
+                            <p>16 April 2021</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box-text">
+                        <h2>LIVE FADE CONTESET</h2>
+                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                        <p>Yesterday, 23:22</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item yes">
+                    <div class="timeline-box-img img-3">
+                        <img src="/css/assets/image-1.png" alt="assets1">
+                        <div class="timeline-box-img-detail">
+                            <p>16 April 2021</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box-text">
+                        <h2>TALSK! with RUEDY</h2>
+                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                        <p>Yesterday, 23:22</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item no"></div>
+            </div>
+
+            <!-- COBA 1 -->
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item no"></div>
+            </div>    
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item yes">
+                    <div class="timeline-box-img img-2">
+                        <img src="/css/assets/image-1.png" alt="assets1">
+                        <div class="timeline-box-img-detail">
+                            <p>16 April 2021</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box-text">
+                        <h2>The Adams Live Music</h2>
+                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                        <p>Yesterday, 23:22</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item yes">
+                    <div class="timeline-box-img img-1">
+                        <img src="/css/assets/image-1.png" alt="assets1">
+                        <div class="timeline-box-img-detail">
+                            <p>16 April 2021</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box-text">
+                        <h2>LIVE FADE CONTESET</h2>
+                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                        <p>Yesterday, 23:22</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item no"></div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item no"></div>
+            </div>
+
+            <div class="timeline-grid-x">
+                <div class="timeline-grid-item yes">
+                    <div class="timeline-box-img img-2">
+                        <img src="/css/assets/image-1.png" alt="assets1">
+                        <div class="timeline-box-img-detail">
+                            <p>16 April 2021</p>
+                        </div>
+                    </div>
+                    <div class="timeline-box-text">
+                        <h2>TALSK! with RUEDY</h2>
+                        <p>Experience our signature exhibition now in 360 tour, featuring your favourite denim exhibitions and more.</p>
+                        <p>Yesterday, 23:22</p>
+                    </div>
+                </div>
+            </div>            
+
         </div>
     </div>
 </div>

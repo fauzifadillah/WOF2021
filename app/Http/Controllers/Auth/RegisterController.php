@@ -72,9 +72,9 @@ class RegisterController extends Controller
             'roles_id' => 2
         ]);
         $leaderboard = Leaderboard::create([
-                    'user_id' => $createUser->id,
-                    'total_point' => '0',
-                    'current_point' => '0',
+            'user_id' => $createUser->id,
+            'total_point' => '0',
+            'current_point' => '0',
         ]);
 
         return $createUser;

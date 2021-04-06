@@ -67,9 +67,11 @@
                 <img src="/css/assets/user.svg" alt="user">
                 <img src="/css/assets/siku.svg" alt="siku">
                 <div class="nav-drop">
-                    <a onclick="window.location='{{ request()->is('profile') ? '#' : route('profile.index') }}'">Profile</a>
-                    <a onclick="window.location='{{ request()->is('leaderboard') ? '#' : route('leaderboard.index') }}'">Leaderboards</a>
-                    <a onclick="document.getElementById('logout-form').submit();">Log Out</a>
+                    <ul>
+                        <li><a onclick="window.location='{{ request()->is('profile') ? '#' : route('profile.index') }}'">Profile</a></li>
+                        <li><a onclick="window.location='{{ request()->is('leaderboard') ? '#' : route('leaderboard.index') }}'">Leaderboards</a></li>
+                        <li><a onclick="document.getElementById('logout-form').submit();">Log Out</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="navbar__user">

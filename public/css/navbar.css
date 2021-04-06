@@ -1,4 +1,5 @@
-.navbar__button-1 {
+@import url("http://fonts.cdnfonts.com/css/gotham");
+/* .navbar__button-1 {
     display: flex;
     justify-content: space-between;
     padding: 0 7px;
@@ -144,4 +145,145 @@
     .navbar__cup img {
         width: 25px;
     }
-}
+} */
+
+
+.navbar__button-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 7px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .navbar__button-1 img {
+    width: 35px;
+    margin-left: 20px;
+  }
+  
+  .navbar__button-1 img:nth-child(3) {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    width: 10px;
+  }
+  
+  .navbar__button-1 p {
+    font-size: 24px;
+    color: var(--blue);
+    font-family: 'Gotham', sans-serif;
+    font-weight: 550;
+    /* margin-top: 2px; */
+  }
+  
+  .navbar__button-1 .nav-drop {
+    width: 100%;
+    display: none;
+  }
+  
+  .navbar__button-1 .nav-drop ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    list-style: none;
+    background-color: #f7f7f7;
+  }
+  
+  .navbar__button-1 .nav-drop ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    padding: 25px 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--blue);
+    font-weight: 500;
+    font-family: 'Gotham', sans-serif;
+  }
+
+  .navbar__button-1 .nav-drop ul li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  
+  .navbar__button-1 .nav-drop ul li:hover {
+    background-color: #dadada;
+  }
+  
+  .navbar__button-1:hover .nav-drop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 290px;
+    background-color: #f7f7f7;
+    -webkit-transform: translate(0, 120px);
+            transform: translate(0, 120px);
+    position: absolute;
+  }
+  
+  .navbar__cup {
+    display: none;
+  }
+  
+  @media (max-width: 1280px) {
+    .navbar__button-1 p {
+      font-size: 1.875vw;
+    }
+    .navbar__button-1:hover .nav-drop {
+      width: 260px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar__button-1 {
+      display: none;
+    }
+    .navbar__cup {
+      cursor: pointer;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    .navbar__cup img {
+      width: 25px;
+    }
+  }
+  /*# sourceMappingURL=newNavbar.css.map */

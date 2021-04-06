@@ -9,7 +9,7 @@
 }
 
 body {
-  background-image: url("assets/background3.png");
+  background-image: url("assets/background.jpg");
 }
 
 @media (max-width: 590px) {
@@ -2058,7 +2058,8 @@ body {
     font-size: 28px;
   }
   .media__container .media__container__wrap .media-img img {
-    width: 92.344vw;
+    width: 85.344vw;
+    transform: translate(25px,0);
   }
 }
 
@@ -2068,6 +2069,10 @@ body {
   }
   .media__container .media__container__wrap .media-header h1 {
     font-size: 16px;
+  }
+  .media__container .media__container__wrap .media-img img {
+    width: 85.344vw;
+    transform: translate(5px,0);
   }
 }
 
