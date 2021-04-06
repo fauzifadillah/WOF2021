@@ -70,9 +70,13 @@ Route::middleware('auth')->group(function(){
         Route::delete('delete/{id}', 'AccountController@delete')->name('account.delete');
         Route::get('data', 'AccountController@data')->name('account.data');
     });
+    Route::prefix('leaderboard')->group(function(){
+        Route::get('/', 'LeaderboardController@index')->name('leaderboard.index');
+        Route::get('data', 'LeaderboardController@data')->name('leaderboard.data');
+    });
 });
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('event', 'EventController@index')->name('event.index');
 Route::get('event/show/{id}', 'EventController@show')->name('event.show');
-Route::get('leaderboard', 'LeaderboardController@index')->name('leaderboard.index');
+

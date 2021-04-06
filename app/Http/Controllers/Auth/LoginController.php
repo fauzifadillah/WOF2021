@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\User;
+use App\Models\Leaderboard;
 use Socialite;
 use Exception;
 use Auth;
@@ -94,6 +95,12 @@ class LoginController extends Controller
                     'password' => encrypt('admin@123'),
                     'avatar' => $user->avatar,
                     'facebook_id' => $user->id,
+                    'role_id' => '2',
+                ]);
+                $leaderboard = Leaderboard::create([
+                    'user_id' => $createUser->id,
+                    'total_point' => '0',
+                    'current_point' => '0',
                 ]);
                 Auth::login($createUser);
                 return redirect('/home');
@@ -121,9 +128,14 @@ class LoginController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id' => $user->id,
+                    'role_id' => '2',
                     'password' => encrypt('admin@123')
                 ]);
-
+                $leaderboard = Leaderboard::create([
+                    'user_id' => $createUser->id,
+                    'total_point' => '0',
+                    'current_point' => '0',
+                ]);
                 Auth::login($createUser);
                 return redirect('/home');
             }
