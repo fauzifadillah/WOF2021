@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\Leaderboard;
+use App\Models\EventCheck;
 use DataTables;
 
 class EventController extends Controller
@@ -21,10 +23,36 @@ class EventController extends Controller
 
     public function show($id)
     {
+        $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
+        if($eventcheck){
+            $check= True;
+        }
+        else{
+            $check = False;
+        }
         $model = Event::find($id);
-        return view('events.show', ['model' => $model]);
+        return view('events.show', ['model' => $model, 'check' => $check]);
     }
 
+    public function check($id)
+    {
+        $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
+        if($eventcheck){
+            return redirect()->route('event.show', ['id' => $id]);
+        }
+        else{
+            $eventcheckCreate = EventCheck::create([
+                    'user_id' => auth()->user()->id,
+                    'event_id' => $id,
+                    ]);
+            $editPoint = Leaderboard::where('user_id',auth()->user()->id)->first();
+            $editPoint->total_point += 100;
+            $editPoint->current_point += 100;
+            $editPoint->save();
+        }
+
+        return redirect()->route('event.show', ['id' => $id]);
+    }
     public function create()
     {
         $model = new Event();

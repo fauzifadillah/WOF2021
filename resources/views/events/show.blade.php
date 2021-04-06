@@ -21,7 +21,7 @@
                         <p>VIEW</p>
                     </div>
                     <div class="detail1-img-button-signup">
-                        <p>CHECK IN</p>
+                        <button @if($check) disabled=True @endif  onclick="location.href='{{ route('event.checkin', $model->id)}}'" type = "button" >CHECK IN</button>
                     </div>
                 </div>
             </div>
@@ -68,5 +68,5 @@
 
 @push('js')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/event.js"></script>    
+    <script src="/js/event.js"></script>
 @endpush
