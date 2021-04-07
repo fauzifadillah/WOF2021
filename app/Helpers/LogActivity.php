@@ -1,15 +1,11 @@
 <?php
 
-
 namespace App\Helpers;
 use Request;
 use App\Models\Log;
 
-
 class LogActivity
 {
-
-
     public static function addToLog($subject)
     {
     	$log = [];
@@ -21,11 +17,8 @@ class LogActivity
     	Log::create($log);
     }
 
-
     public static function logActivityLists()
     {
     	return Log::latest()->get();
     }
-
-
 }

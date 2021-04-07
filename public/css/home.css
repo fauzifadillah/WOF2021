@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
-@import url("http://fonts.cdnfonts.com/css/gotham");
 * {
   margin: 0;
   padding: 0;
@@ -110,7 +109,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   list-style: none;
   padding-right: 25px;
 }
@@ -118,15 +117,15 @@ body {
 .navbar__container .navbar__container__wrap .navbar__menu ul li a {
   text-decoration: none;
   color: var(--blue);
-  font-family: 'Gotham', sans-serif;
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 24px;
   cursor: pointer;
 }
 
 .navbar__container .navbar__container__wrap .navbar__menu ul li a:hover {
   text-decoration: underline;
-  text-decoration-thickness: 3.5px;
+  text-decoration-thickness: 3px;
 }
 
 .navbar__container .navbar__container__wrap .navbar__button {

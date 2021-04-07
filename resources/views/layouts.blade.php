@@ -18,7 +18,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+    {{-- <link href="/css/gotham" rel="stylesheet"> --}}
 </head>
 <body>
     <div class="navbar__container">
@@ -29,7 +30,7 @@
             <div class="navbar__content__detail">
                 <ul>
                     <li><a>EXHIBITION</a></li>
-                    <li><a>EVENT</a></li>
+                    <li><a href="{{ request()->is('event') ? '#' : route('event.index') }}">EVENT</a></li>
                     <li><a>MARKET</a></li>
                 </ul>
                 @auth
