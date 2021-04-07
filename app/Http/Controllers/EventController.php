@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Leaderboard;
 use App\Models\EventCheck;
+use App\Helpers\LogActivity;
 use DataTables;
 
 class EventController extends Controller
@@ -15,8 +16,13 @@ class EventController extends Controller
     {
         $user = auth()->user();
         if($user){
-            if($user->roles->name=='Admin') return view('admin.events.index');
+            if($user->roles->name=='Admin')
+            {
+                LogActivity::addToLog('Admin : Access event Index');
+                return view('admin.events.index');
+            }
         }
+        LogActivity::addToLog('Guest : Access event Index');
         $events = Event::get();
         return view('events.index', ['events' => $events]);
     }
@@ -26,9 +32,11 @@ class EventController extends Controller
         return view('events.show-dummy');
         $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
         if($eventcheck){
+            LogActivity::addToLog('User : Has Check in this event');
             $check= True;
         }
         else{
+            LogActivity::addToLog('User : Not Checked in this event');
             $check = False;
         }
         $model = Event::find($id);
@@ -39,9 +47,11 @@ class EventController extends Controller
     {
         $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
         if($eventcheck){
+            LogActivity::addToLog('User : Has Check in this event');
             return redirect()->route('event.show', ['id' => $id]);
         }
         else{
+            LogActivity::addToLog('User : Now Checked in this event');
             $eventcheckCreate = EventCheck::create([
                     'user_id' => auth()->user()->id,
                     'event_id' => $id,
@@ -56,6 +66,7 @@ class EventController extends Controller
     }
     public function create()
     {
+        LogActivity::addToLog('Admin : Use form to create event');
         $model = new Event();
         $categories = Category::get();
         return view('admin.events.form', ['model' => $model, 'categories' => $categories]);
@@ -63,6 +74,7 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+        LogActivity::addToLog('Admin : Store data to make event');
         $this->validate($request, [
             'name' => ['required'],
             'desc' => ['required'],
@@ -94,6 +106,7 @@ class EventController extends Controller
 
     public function edit($id)
     {
+        LogActivity::addToLog('Admin : Use form to edit event');
         $model = Event::find($id);
         $categories = Category::get();
         return view('admin.events.form', ['model' => $model, 'categories' => $categories]);
@@ -101,6 +114,7 @@ class EventController extends Controller
 
     public function update(Request $request, $id)
     {
+        LogActivity::addToLog('Admin : Update event');
         $this->validate($request, [
             'name' => ['required'],
             'desc' => ['required'],
@@ -132,12 +146,14 @@ class EventController extends Controller
 
     public function delete($id)
     {
+        LogActivity::addToLog('Admin : Delete event');
         $model = Event::findOrFail($id)->delete();
         return response()->json($model);
     }
 
     public function data()
     {
+        LogActivity::addToLog('Admin : Access data event');
         $model = Event::with('categories')->get();
         return DataTables::of($model)
             ->editColumn('desc', function($model){

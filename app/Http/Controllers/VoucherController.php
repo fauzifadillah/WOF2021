@@ -5,17 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Voucher;
 use App\Models\User;
+use App\Helpers\LogActivity;
 use DataTables;
 
 class VoucherController extends Controller
 {
     public function index()
     {
+        LogActivity::addToLog('Admin : Access Voucher Index');
         if(auth()->user()->roles->name=='Admin') return view('admin.vouchers.index');
     }
 
     public function create()
     {
+        LogActivity::addToLog('Admin : Use form to create voucher');
         $model = new Voucher();
         $users = User::where('roles_id', 3)->get();
         return view('admin.vouchers.form', ['model' => $model, 'users' => $users]);
@@ -23,6 +26,7 @@ class VoucherController extends Controller
 
     public function store(Request $request)
     {
+        LogActivity::addToLog('Admin : Store data to make voucher');
         $this->validate($request, [
             'name' => ['required'],
             'desc' => ['required'],
@@ -40,6 +44,7 @@ class VoucherController extends Controller
 
     public function edit($id)
     {
+        LogActivity::addToLog('Admin : Use form to edit voucher');
         $model = Voucher::find($id);
         $users = User::where('roles_id', 3)->get();
         return view('admin.vouchers.form', ['model' => $model, 'users' => $users]);
@@ -47,6 +52,7 @@ class VoucherController extends Controller
 
     public function update(Request $request, $id)
     {
+        LogActivity::addToLog('Admin : Update voucher');
         $this->validate($request, [
             'name' => ['required'],
             'desc' => ['required'],
@@ -78,12 +84,14 @@ class VoucherController extends Controller
 
     public function delete($id)
     {
+        LogActivity::addToLog('Admin : Delete voucher');
         $model = Event::findOrFail($id)->delete();
         return response()->json($model);
     }
 
     public function data()
     {
+        LogActivity::addToLog('Admin : Access data voucher');
         $model = Voucher::with('users')->get();
         return DataTables::of($model)
             ->addColumn('action', function($model){

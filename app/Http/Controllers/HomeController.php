@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        LogActivity::addToLog('Access Home');
+        LogActivity::addToLog('Guest : Access Home');
         $user = auth()->user();
         if($user){
             if($user->roles->name=='Admin') return view('admin.home');

@@ -20,7 +20,7 @@ class CreateLogsTable extends Migration
             $table->string('url');
             $table->ipAddress('ip');
             $table->string('agent')->nullable();
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
