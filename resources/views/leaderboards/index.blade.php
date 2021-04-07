@@ -3,13 +3,9 @@
 @section('title','EVENT')
 
 @push('css')
-    <link href="/assets/css/app-new.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/event.css">
     <link rel="stylesheet" href="/css/event-detail.css">
     <link rel="stylesheet" href="/css/leaderboard.css">
-    <link href="/assets/DataTables/DataTables-1.10.23/css/jquery.dataTables.css" rel="stylesheet"/>
-    <link href="/assets/DataTables/DataTables-1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.css">
 @endpush
 
 @section('content')
@@ -31,7 +27,22 @@
 
             <div class="leaderboard-player">
                 <table id="table" class= "table">
-
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>User</th>
+                            <th>Point</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $user)
+                        <tr>
+                            <td>1</td>
+                            <td>BUDI AGUNG</td>
+                            <td>5,231,000</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -55,24 +66,5 @@
 @endsection
 
 @push('js')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="/assets/DataTables/DataTables-1.10.23/js/jquery.dataTables.min.js"></script>
-  <script src="/assets/DataTables/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
 
-  <script>
-    $('#table').DataTable({
-      responsive: true,
-      serverSide: true,
-      ajax: "{{ route('leaderboard.data') }}",
-      order: [[ 2, "desc" ]],
-      columns: [
-        {title: 'Rank', data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false, width: '7.5%', className: 'dt-center'},
-        {title: 'Username', data: 'name', name: 'name', width: '30%', orderable:false, className: 'dt-head-center'},
-        {title: 'Point', data: 'leaderboard.current_point', name: 'point', orderable:false,width: '30%', className: 'dt-head-center'},
-      ],
-    });
-  </script>
 @endpush

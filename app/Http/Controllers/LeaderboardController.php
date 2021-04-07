@@ -12,7 +12,8 @@ class LeaderboardController extends Controller
     public function index()
     {
         LogActivity::addToLog('User : Access Leaderboard Index');
-        return view('leaderboards.index');
+        $users = User::get();
+        return view('leaderboards.index', ['users' => $users]);
     }
 
     public function data()
