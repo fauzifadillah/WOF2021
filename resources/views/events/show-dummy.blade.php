@@ -20,9 +20,9 @@
                 <div class="detail1-img-button-signin">
                     <p>VIEW</p>
                 </div>
-                <div class="detail1-img-button-signup">
+                <a class="detail1-img-button-signup" href="{{ route('event.checkin', 1) }}">
                     <p>CHECK IN</p>
-                </div>
+                </a>
             </div>
         </div>
 
