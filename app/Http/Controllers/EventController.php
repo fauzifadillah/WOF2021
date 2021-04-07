@@ -23,6 +23,7 @@ class EventController extends Controller
 
     public function show($id)
     {
+        return view('events.show-dummy');
         $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
         if($eventcheck){
             $check= True;

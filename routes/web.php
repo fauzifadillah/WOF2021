@@ -74,14 +74,12 @@ Route::middleware('auth')->group(function(){
         Route::get('/', 'LeaderboardController@index')->name('leaderboard.index');
         Route::get('data', 'LeaderboardController@data')->name('leaderboard.data');
     });
-    Route::prefix('event')->group(function(){
-        Route::get('/', 'EventController@index')->name('event.index');
-        Route::get('/show/{id}', 'EventController@show')->name('event.show');
-        Route::get('show/{id}/checkin', 'EventController@check')->name('event.checkin');
-    });
-
 });
 
 Route::get('/', 'HomeController@index')->name('home');
 
-
+Route::prefix('event')->group(function(){
+    Route::get('/', 'EventController@index')->name('event.index');
+    Route::get('/show/{id}', 'EventController@show')->name('event.show');
+    Route::get('show/{id}/checkin', 'EventController@check')->name('event.checkin');
+});

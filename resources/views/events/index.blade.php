@@ -101,7 +101,8 @@
             @endif
             @endforeach --}}
 
-            <div class="timeline-grid-x">
+            <a class="timeline-grid-x" href="{{ route('event.show', 1) }}">
+            {{-- <div class="timeline-grid-x"> --}}
                 <div class="timeline-grid-item yes">
                     <div class="timeline-box-img img-1">
                         <img src="/css/assets/timeline-1.jpg" alt="assets1">
@@ -115,7 +116,7 @@
                         <p>Yesterday, 23:22</p>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <div class="timeline-grid-x">
                 <div class="timeline-grid-item no"></div>
