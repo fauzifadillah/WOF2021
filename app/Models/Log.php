@@ -9,5 +9,8 @@ class Log extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'subject', 'url', 'ip', 'agent', 'user_id'
+    ];
     protected $guarded = [];
 }
