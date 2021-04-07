@@ -130,6 +130,12 @@
   cursor: pointer;
 }
 
+.detail1__container .detail1__container-wrap .detail1-img .detail1-img-button .detail1-img-button-signup img {
+  width: 20px;
+  color: var(--white);
+  margin-right: 5px;
+}
+
 .detail1__container .detail1__container-wrap .detail1-img .detail1-img-button .detail1-img-button-signup.disabled{
   width: 158px;
   height: 44px;
@@ -324,6 +330,11 @@
     background-color: var(--blue);
     color: var(--white);
     cursor: pointer;
+  }
+
+  .detail1__container .detail1__container-wrap .detail1-fake-button .detail1-fake-button-signup img {
+    width: 20px;
+    margin-right: 5px;
   }
   .detail1__container .detail1__container-wrap .detail1-fake-button .detail1-fake-button-signup.disabled {
     background-color: var(--grey40);

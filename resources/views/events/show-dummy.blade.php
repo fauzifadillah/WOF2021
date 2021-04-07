@@ -21,7 +21,8 @@
                     <p>VIEW</p>
                 </div>
                 <!--TAMBAHIN DISABLED JGN LUPA -->
-                <a class="detail1-img-button-signup" href="{{ route('event.checkin', 1) }}"> 
+                <a class="detail1-img-button-signup" href="{{ route('event.checkin', 1) }}">
+                    <!-- <img src="/assets/images/Checklist.svg" alt="check">  -->
                     <p>CHECK IN</p>
                 </a>
             </div>
@@ -45,6 +46,7 @@
             </div>
             <!--TAMBAHIN DISABLED JGN LUPA -->
             <div class="detail1-fake-button-signup disabled">
+                <!-- <img src="/assets/images/Checklist.svg" alt="check"> -->
                 <p>CHECK IN</p>
             </div>
         </div>
