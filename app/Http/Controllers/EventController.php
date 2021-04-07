@@ -29,7 +29,17 @@ class EventController extends Controller
 
     public function show($id)
     {
-        return view('events.show-dummy');
+        $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
+        if($eventcheck){
+            LogActivity::addToLog('User : Has Check in this event');
+            $check= True;
+        }
+        else{
+            LogActivity::addToLog('User : Not Checked in this event');
+            $check = False;
+        }
+        $model = Event::find($id);
+        return view('events.show-dummy', ['model' => $model, 'check' => $check]);
         $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
         if($eventcheck){
             LogActivity::addToLog('User : Has Check in this event');
@@ -61,7 +71,6 @@ class EventController extends Controller
             $editPoint->current_point += 100;
             $editPoint->save();
         }
-
         return redirect()->route('event.show', ['id' => $id]);
     }
     public function create()

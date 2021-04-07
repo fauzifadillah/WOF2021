@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Event;
 
 class DatabaseSeeder extends Seeder
 {
@@ -41,6 +42,14 @@ class DatabaseSeeder extends Seeder
         ]);
         Category::insert([
             'name' => 'Music'
+        ]);
+        Event::insert([
+            'name' => 'Coba',
+            'desc' => 'Coba',
+            'date' => '02-02-02',
+            'start' => '11:00',
+            'end' => '13:00',
+            'categories_id' => 1
         ]);
     }
 }
