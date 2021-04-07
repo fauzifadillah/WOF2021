@@ -77,6 +77,7 @@ Route::middleware('auth')->group(function(){
 });
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/log', 'HomeController@tes')->name('logs');
 
 Route::prefix('event')->group(function(){
     Route::get('/', 'EventController@index')->name('event.index');
