@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\LogActivity;
+use DataTables;
+
 class HomeController extends Controller
 {
     public function index()
