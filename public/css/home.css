@@ -123,9 +123,18 @@ body {
   cursor: pointer;
 }
 
+.navbar__container .navbar__container__wrap .navbar__menu ul li a.navbar-menu-active {
+  /* text-decoration: underline;
+  text-decoration-thickness: 3px; */
+  border-bottom: 3px solid var(--blue);
+  padding-bottom: 2px;
+}
+
 .navbar__container .navbar__container__wrap .navbar__menu ul li a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
+  /* text-decoration: underline;
+  text-decoration-thickness: 3px; */
+  border-bottom: 3px solid var(--blue);
+  padding-bottom: 2px;
 }
 
 .navbar__container .navbar__container__wrap .navbar__button {

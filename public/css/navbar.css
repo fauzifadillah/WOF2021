@@ -212,7 +212,6 @@
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
-    padding: 25px 0;
     cursor: pointer;
     font-size: 18px;
     color: var(--blue);
@@ -231,6 +230,7 @@
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
+    padding: 25px 0;
   }
   
   .navbar__button-1 .nav-drop ul li:hover {

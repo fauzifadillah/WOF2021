@@ -58,7 +58,7 @@
                 <div></div>
                 <ul>
                     <li><a>EXHIBITION</a></li>
-                    <li><a href="{{ request()->is('event') ? '#' : route('event.index') }}">EVENT</a></li>
+                    <li><a href="{{ request()->is('event') ? '#' : route('event.index') }}" class="{{ request()->is('event') ? 'navbar-menu-active' : ''}}">EVENT</a></li>
                     <li><a>MARKET</a></li>
                 </ul>
             </div>
