@@ -84,6 +84,7 @@
             align-items: center;
     width: 227px;
     height: 63px;
+    font-size: 14px;
     background-color: var(--white);
     border: 2px solid var(--blue);
     -webkit-box-shadow: 5px 5px var(--red);
@@ -159,6 +160,7 @@
     .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button {
       width: 170px;
       height: 42px;
+      font-size: 12px;
     }
     .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr td, .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
       padding: 10px;
@@ -194,6 +196,7 @@
     .leaderboard__container .leaderboard__container-wrap .leaderboard-header .leaderboard-prize button {
       width: 130px;
       height: 36px;
+      font-size: 9px;
     }
     .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr td, .leaderboard__container .leaderboard__container-wrap .leaderboard-player table tr th {
       padding: 8px;

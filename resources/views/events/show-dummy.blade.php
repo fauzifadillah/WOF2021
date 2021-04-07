@@ -20,7 +20,8 @@
                 <div class="detail1-img-button-signin">
                     <p>VIEW</p>
                 </div>
-                <a class="detail1-img-button-signup" href="{{ route('event.checkin', 1) }}">
+                <!--TAMBAHIN DISABLED JGN LUPA -->
+                <a class="detail1-img-button-signup" href="{{ route('event.checkin', 1) }}"> 
                     <p>CHECK IN</p>
                 </a>
             </div>
@@ -42,7 +43,8 @@
             <div class="detail1-fake-button-signin">
                 <p>VIEW</p>
             </div>
-            <div class="detail1-fake-button-signup">
+            <!--TAMBAHIN DISABLED JGN LUPA -->
+            <div class="detail1-fake-button-signup disabled">
                 <p>CHECK IN</p>
             </div>
         </div>

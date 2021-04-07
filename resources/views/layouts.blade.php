@@ -104,9 +104,10 @@
         <div class="verif__container__wrap">
             <div class="verif-name">
                 <h1>Hi {{ auth()->user()->name }}</h1>
-                <p>To complete your sign up, please verify your email</p>
+                <p>To complete your sign up, please verify your email</p> <!-- untuk kedua kali di none -->
+                <!-- <p>Please check your email to verify</p> -->
             </div>
-            <div class="verif-button">
+            <div class="verif-button"> <!-- untuk kedua kali di none -->
                 <form method="POST" action="{{ route('verification.resend') }}">
                     @csrf
                     <button type="submit"><p>Verify Email</p></button>
