@@ -11,23 +11,26 @@
 <div class="detail1__container">
     <div class="detail1__container-wrap">
         <div class="detail1-img">
-            <div class="detail1-img-header">
-                <h1>THE ADAMS LIVE MUSIC!</h1>
-                <h3>CATEGORY : MUSIC</h3>
-                <p>21 April, 2021 - 16:00 - 17:00</p>
-            </div>
-            <div class="detail1-img-button">
-                <div class="detail1-img-button-signin">
-                    <p>VIEW</p>
+            <img src="/css/assets/detail1.png" alt="detail">
+            <div class="detail1-absolute">
+                <div class="detail1-img-header">
+                    <h1>THE ADAMS LIVE MUSIC!</h1>
+                    <h3>CATEGORY : MUSIC</h3>
+                    <p>21 April, 2021 - 16:00 - 17:00</p>
                 </div>
-                <a class="detail1-img-button-signup @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
-                    @if($check)
-                        <img src="/assets/images/Checklist.svg" alt="check">
-                        <p>CHECKED IN</p>
-                    @else
-                        <p>CHECK IN</p>
-                    @endif
-                </a>
+                <div class="detail1-img-button">
+                    <div class="detail1-img-button-signin">
+                        <p>VIEW</p>
+                    </div>
+                    <a class="detail1-img-button-signup @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
+                        @if($check)
+                            <img src="/assets/images/Checklist.svg" alt="check">
+                            <p>CHECKED IN</p>
+                        @else
+                            <p>CHECK IN</p>
+                        @endif
+                    </a>
+                </div>
             </div>
         </div>
 
