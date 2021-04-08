@@ -43,9 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne('App\Models\Leaderboard');
     }
 
+    public function logs(){
+        return $this->hasMany('App\Models\Log');
+    }
+
     public function events(){
         return $this->belongsToMany('App\Models\Event', 'event_check', 'user_id', 'event_id');
     }
+
     public function event_check($eventID){
         return  $this->events->attach($eventID);
     }

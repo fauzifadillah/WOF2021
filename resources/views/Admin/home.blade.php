@@ -19,7 +19,6 @@
     <div class="col-12 col-xl-12 stretch-card">
       <div class="row flex-grow">
 
-        {{-- Accounts --}}
         <div class="col-md-4 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
@@ -41,7 +40,6 @@
           </div>
         </div>
 
-        {{-- Events --}}
         <div class="col-md-4 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
@@ -63,7 +61,6 @@
           </div>
         </div>
 
-        {{-- Points --}}
         <div class="col-md-4 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">

@@ -17,14 +17,4 @@ class HomeController extends Controller
         }
         return view('welcome');
     }
-
-    public function tes()
-    {
-        // $logs = LogActivity::logActivityLists();
-        return DataTables::of($logs)
-            ->addIndexColumn()
-            ->removeColumn([])
-            ->rawColumns([])
-            ->make(true);
-    }
 }

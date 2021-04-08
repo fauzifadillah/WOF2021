@@ -9,8 +9,9 @@ class Log extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'subject', 'url', 'ip', 'agent', 'user_id'
-    ];
     protected $guarded = [];
+
+    public function users(){
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
 }

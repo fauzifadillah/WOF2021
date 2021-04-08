@@ -41,6 +41,12 @@
             <span class="link-title">Account</span>
           </a>
         </li>
+        <li class="nav-item {{ active_class(['log']) }}">
+          <a href="{{ url('/log') }}" class="nav-link">
+            <i class="link-icon fas fa-history"></i>
+            <span class="link-title">Log</span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
