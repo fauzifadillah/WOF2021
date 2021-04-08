@@ -34,6 +34,7 @@
             $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
         });
     </script>
+    <script src="/assets/plugins/feather-icons/feather.min.js"></script>
     <script src="/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="/assets/js/template.js"></script>
     @stack('js')

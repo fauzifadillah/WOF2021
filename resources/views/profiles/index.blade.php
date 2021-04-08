@@ -27,12 +27,12 @@
                         <tr>
                             <td>Rank</td>
                             <td>:</td>
-                            <td class="right">Denim Lord</td>
+                            <td class="right">{{ $rank }}</td>
                         </tr>
                         <tr>
                             <td>Points</td>
                             <td>:</td>
-                            <td class="right">xxxx</td>
+                            <td class="right">{{ auth()->user()->leaderboard->current_point }}</td>
                         </tr>
                     </table>
                 </div>

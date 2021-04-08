@@ -35,11 +35,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $i=>$user)
+                        @php $i = 1; @endphp
+                        @foreach ($users as $user)
                         <tr>
-                            <td>{{$i+1}}</td>
+                            <td>{{$i}}</td>
                             <td>{{$user->name}}</td>
-                            <td>1000</td>
+                            <td>{{$user->leaderboard->total_point}}</td>
+                            @php $i++; @endphp
                         </tr>
                         @endforeach
                     </tbody>

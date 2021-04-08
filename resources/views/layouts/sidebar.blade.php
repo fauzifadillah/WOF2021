@@ -23,9 +23,15 @@
             <span class="link-title">Event</span>
           </a>
         </li>
+        <li class="nav-item {{ active_class(['point']) }}">
+          <a href="{{ url('/point') }}" class="nav-link">
+            <i class="link-icon fas fa-trophy"></i>
+            <span class="link-title">Point</span>
+          </a>
+        </li>
         <li class="nav-item {{ active_class(['voucher']) }}">
           <a href="{{ url('/voucher') }}" class="nav-link">
-            <i class="link-icon fas fa-trophy"></i>
+            <i class="link-icon fas fa-money-bill-wave-alt"></i>
             <span class="link-title">Voucher</span>
           </a>
         </li>

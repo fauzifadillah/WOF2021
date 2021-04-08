@@ -162,7 +162,7 @@ class EventController extends Controller
 
     public function data()
     {
-        LogActivity::addToLog('Admin : Access data event');
+        // LogActivity::addToLog('Admin : Access data event');
         $model = Event::with('categories')->get();
         return DataTables::of($model)
             ->editColumn('desc', function($model){

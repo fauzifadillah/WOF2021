@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Level;
 use App\Helpers\LogActivity;
 
 class ProfileController extends Controller
@@ -12,7 +13,19 @@ class ProfileController extends Controller
     public function index()
     {
         LogActivity::addToLog('User : Access Leaderboard Index');
-        return view('profiles.index');
+        $point = auth()->user()->leaderboard->total_point;
+        $levels = Level::get();
+        $rank = null;
+        foreach($levels as $level){
+            if($point<$level->points){
+                $rank = $level->name;
+                break;
+            }
+        }
+        if($rank == null){
+            $rank = $level->name;
+        }
+        return view('profiles.index', ['rank' => $rank]);
     }
 
     public function edit()
@@ -32,6 +45,9 @@ class ProfileController extends Controller
             $filename = $request->name.'.'.$request->file->getClientOriginalExtension();
             $image = $directory.$filename;
             $request->file->move(public_path($directory), $filename);
+        }
+        else{
+            $image = null;
         }
         User::find(auth()->user()->id)->update([
             'name' => $request->name,

@@ -52,6 +52,15 @@ Route::middleware('auth')->group(function(){
         Route::delete('delete/{id}', 'CategoryController@delete')->name('category.delete');
         Route::get('data', 'CategoryController@data')->name('category.data');
     });
+    Route::prefix('point')->group(function(){
+        Route::get('/', 'PointController@index')->name('point.index');
+        Route::get('create', 'PointController@create')->name('point.create');
+        Route::post('store', 'PointController@store')->name('point.store');
+        Route::get('edit/{id}', 'PointController@edit')->name('point.edit');
+        Route::put('update/{id}', 'PointController@update')->name('point.update');
+        Route::delete('delete/{id}', 'PointController@delete')->name('point.delete');
+        Route::get('data', 'PointController@data')->name('point.data');
+    });
     Route::prefix('voucher')->group(function(){
         Route::get('/', 'VoucherController@index')->name('voucher.index');
         Route::get('create', 'VoucherController@create')->name('voucher.create');

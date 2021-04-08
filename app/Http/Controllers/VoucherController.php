@@ -13,7 +13,7 @@ class VoucherController extends Controller
     public function index()
     {
         LogActivity::addToLog('Admin : Access Voucher Index');
-        if(auth()->user()->roles->name=='Admin') return view('admin.vouchers.index');
+        return view('admin.vouchers.index');
     }
 
     public function create()
@@ -31,13 +31,13 @@ class VoucherController extends Controller
             'name' => ['required'],
             'desc' => ['required'],
             'points' => ['required'],
-            'user' => ['required'],
+            'user' => ['required']
         ]);
         $model = Voucher::create([
             'name' => $request->name,
             'desc' => $request->desc,
             'points' => $request->points,
-            'users_id' => $request->user,
+            'users_id' => $request->user
         ]);
         return response()->json($model);
     }
@@ -56,28 +56,14 @@ class VoucherController extends Controller
         $this->validate($request, [
             'name' => ['required'],
             'desc' => ['required'],
-            'category' => ['required'],
-            'date' => ['required'],
-            'start' => ['required'],
-            'end' => ['required'],
+            'points' => ['required'],
+            'user' => ['required']
         ]);
-        if($request->file('image')!=null){
-            $directory = '/upload/events/';
-            $filename = $request->name.'.'.$request->image->getClientOriginalExtension();
-            $image = $directory.$filename;
-            $request->image->move(public_path($directory), $filename);
-        }
-        else{
-            $image = null;
-        }
-        $model = Event::findOrFail($id)->update([
+        $model = Voucher::findOrFail($id)->update([
             'name' => $request->name,
             'desc' => $request->desc,
-            'category_id' => $request->category,
-            'date' => $request->date,
-            'start' => $request->start,
-            'end' => $request->end,
-            'image' => $image
+            'points' => $request->points,
+            'users_id' => $request->user,
         ]);
         return response()->json($model);
     }
@@ -85,13 +71,13 @@ class VoucherController extends Controller
     public function delete($id)
     {
         LogActivity::addToLog('Admin : Delete voucher');
-        $model = Event::findOrFail($id)->delete();
+        $model = Voucher::findOrFail($id)->delete();
         return response()->json($model);
     }
 
     public function data()
     {
-        LogActivity::addToLog('Admin : Access data voucher');
+        // LogActivity::addToLog('Admin : Access data voucher');
         $model = Voucher::with('users')->get();
         return DataTables::of($model)
             ->addColumn('action', function($model){

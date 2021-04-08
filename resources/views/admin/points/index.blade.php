@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title','EVENT')
+@section('title','POINT')
 
 @push('css')
   <link href="/assets/DataTables/DataTables-1.10.23/css/jquery.dataTables.css" rel="stylesheet"/>
@@ -9,35 +9,16 @@
 @endpush
 
 @section('content')
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="event-tab" data-toggle="tab" href="#events" role="tab" aria-controls="event" aria-selected="true">Event</a>
-  </li>
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="category-tab" data-toggle="tab" href="#categories-tabs" role="tab" aria-controls="category" aria-selected="false">Category</a>
-  </li>
-</ul>
-
-<!-- Tab panes -->
-<div class="card">
-  <div class="card-body">
-    <div class="tab-content">
-      <div class="tab-pane active" id="events" role="tabpanel" aria-labelledby="event-tab">
+<div class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
         <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
-          <h6 class="card-title mb-0">EVENT</h6>
-          <button class="btn btn-primary btn-sm modal-show" type="button" href="{{ route('event.create') }}" name="Create New Event" data-toggle="modal" data-target="#modal">+ Add New</button>
+            <h6 class="card-title mb-0">POINT</h6>
+            <button class="btn btn-primary btn-sm modal-show" type="button" href="{{ route('point.create') }}" name="Create New Voucher" data-toggle="modal" data-target="#modal">+ Add New</button>
         </div>
         <div class="table-responsive">
-          <table id="event-table" class="table hover" style="width:100%"></table>
-        </div>
-      </div>
-      <div class="tab-pane" id="categories-tabs" role="tabpanel" aria-labelledby="category-tab">
-        <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
-          <h6 class="card-title mb-0">CATEGORY</h6>
-          <button class="btn btn-primary btn-sm modal-show" type="button" href="{{ route('category.create') }}" name="Create New Category" data-toggle="modal" data-target="#modal">+ Add New</button>
-        </div>
-        <div class="table-responsive">
-          <table id="category-table" class="table hover" style="width:100%"></table>
+            <table id="table" class="table hover" style="width:100%"></table>
         </div>
       </div>
     </div>
@@ -51,34 +32,19 @@
   <script src="/assets/DataTables/DataTables-1.10.23/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap4.min.js"></script>
-  <script src="/assets/sweetalert2/sweetalert2.all.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.js"></script>
 
   <script>
-    var event = $('#event-table').DataTable({
+    $('#table').DataTable({
       responsive: true,
       serverSide: true,
-      ajax: "{{ route('event.data') }}",
+      ajax: "{{ route('point.data') }}",
       order: [[ 1, "asc" ]],
       columns: [
-        {title: '#', data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false, width: '7.5%', className: 'dt-center'},
-        {title: 'Name', data: 'name', name: 'name', width: '30%', className: 'dt-head-center'},
-        {title: 'Description', data: 'desc', name: 'desc', width: '30%', className: 'dt-head-center'},
-        {title: 'Category', data: 'categories.name', name: 'categories.name', width: '30%', className: 'dt-head-center'},
-        {title: 'Timeline', data: 'timeline', name: 'timeline', width: '30%', className: 'dt-head-center'},
-        {title: 'Action', data: 'action', name: 'action', width: '12.5%', className: 'dt-center'},
-      ],
-    });
-
-    var category = $('#category-table').DataTable({
-      responsive: true,
-      serverSide: true,
-      ajax: "{{ route('category.data') }}",
-      order: [[ 1, "asc" ]],
-      columns: [
-        {title: '#', data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false, width: '20%', className: 'dt-center'},
-        {title: 'Name', data: 'name', name: 'name', width: '50%', className: 'dt-head-center'},
-        {title: 'Action', data: 'action', name: 'action', width: '30%', className: 'dt-center'},
+        {title: '#', data: 'DT_RowIndex', name: 'DT_RowIndex', orderable:false, width: '10%', className: 'dt-center'},
+        {title: 'Name', data: 'name', name: 'name', width: '37.5%', className: 'dt-head-center'},
+        {title: 'Point', data: 'points', name: 'points', width: '37.5%', className: 'dt-head-center'},
+        {title: 'Action', data: 'action', name: 'action', width: '15%', className: 'dt-center'},
       ],
     });
 
@@ -178,7 +144,7 @@
             },
             success: function(response){
               $('.loading').addClass('hidden');
-              $('.table').DataTable().ajax.reload();
+              $('#table').DataTable().ajax.reload();
               const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',

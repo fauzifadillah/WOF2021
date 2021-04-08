@@ -34,9 +34,9 @@
                 </form>
             </div>
             <div class="edit-button">
-                <div class="button-cancel">
+                <a href="{{ route('profile.index') }}" class="button-cancel">
                     <button>Cancel</button>
-                </div>
+                </a>
                 <div class="button-save">
                     <button form="PROFILE" type="input">Save</button>
                 </div>

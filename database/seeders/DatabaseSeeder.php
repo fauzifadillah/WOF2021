@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Level;
 use App\Models\Category;
 use App\Models\Event;
 
@@ -42,6 +43,18 @@ class DatabaseSeeder extends Seeder
         ]);
         Category::insert([
             'name' => 'Music'
+        ]);
+        Level::insert([
+            'name' => 'Denim Lord',
+            'points' => '500',
+        ]);
+        Level::insert([
+            'name' => 'Denim Master',
+            'points' => '1000',
+        ]);
+        Level::insert([
+            'name' => 'Denim Leader',
+            'points' => '2000',
         ]);
         Event::insert([
             'name' => 'Coba',

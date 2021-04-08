@@ -56,7 +56,7 @@ class CategoryController extends Controller
 
     public function data()
     {
-        LogActivity::addToLog('Admin : Access data category');
+        // LogActivity::addToLog('Admin : Access data category');
         $model = Category::get();
         return DataTables::of($model)
             ->addColumn('action', function($model){

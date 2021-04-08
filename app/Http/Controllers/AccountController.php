@@ -78,7 +78,6 @@ class AccountController extends Controller
 
     public function data()
     {
-        LogActivity::addToLog('Admin : Access data account');
         $model = User::with('roles')->get();
         return DataTables::of($model)
             ->addColumn('action', function($model){
