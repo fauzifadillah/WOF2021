@@ -11,7 +11,7 @@
 <div class="detail1__container">
     <div class="detail1__container-wrap">
         <div class="detail1-img">
-            <img src="/css/assets/detail1.png" alt="detail">
+            <img src="/css/assets/detail1.png" class="detail1-img-banner" alt="detail">
             <div class="detail1-absolute">
                 <div class="detail1-img-header">
                     <h1>THE ADAMS LIVE MUSIC!</h1>
@@ -50,7 +50,7 @@
             <div class="detail1-fake-button-signin">
                 <p>VIEW</p>
             </div>
-            <a class="detail1-fake-button-signup disabled @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
+            <a class="detail1-fake-button-signup @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
                 @if($check)
                     <img src="/assets/images/Checklist.svg" alt="check">
                     <p>CHECKED IN</p>
