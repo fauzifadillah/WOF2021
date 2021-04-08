@@ -18,8 +18,6 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
-    {{-- <link href="/css/gotham" rel="stylesheet"> --}}
 </head>
 <body>
     <div class="navbar__container">
@@ -103,15 +101,21 @@
     <div class="verif__container">
         <div class="verif__container__wrap">
             <div class="verif-name">
-                <h1>Hi {{ auth()->user()->name }}</h1>
-                <p>To complete your sign up, please verify your email</p> <!-- untuk kedua kali di none -->
-                <!-- <p>Please check your email to verify</p> -->
+                @if (session('resent'))
+                    <p>Please check your email to verify</p>
+                @else
+                    <h1>Hi {{ auth()->user()->name }}</h1>
+                    <p>To complete your sign up, please verify your email</p> <!-- untuk kedua kali di none -->
+                @endif
             </div>
             <div class="verif-button"> <!-- untuk kedua kali di none -->
+                @if (session('resent'))
+                @else
                 <form method="POST" action="{{ route('verification.resend') }}">
                     @csrf
                     <button type="submit"><p>Verify Email</p></button>
                 </form>
+                @endif
             </div>
         </div>
     </div>

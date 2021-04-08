@@ -35,11 +35,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($users as $i=>$user)
                         <tr>
-                            <td>1</td>
-                            <td>BUDI AGUNG</td>
-                            <td>5,231,000</td>
+                            <td>{{$i+1}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>1000</td>
                         </tr>
                         @endforeach
                     </tbody>

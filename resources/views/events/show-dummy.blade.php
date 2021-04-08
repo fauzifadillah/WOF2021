@@ -20,10 +20,13 @@
                 <div class="detail1-img-button-signin">
                     <p>VIEW</p>
                 </div>
-                <!--TAMBAHIN DISABLED JGN LUPA -->
                 <a class="detail1-img-button-signup @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
-                    @if($check)<img src="/assets/images/Checklist.svg" alt="check">@endif
-                    <p>CHECK IN</p>
+                    @if($check)
+                        <img src="/assets/images/Checklist.svg" alt="check">
+                        <p>CHECKED IN</p>
+                    @else
+                        <p>CHECK IN</p>
+                    @endif
                 </a>
             </div>
         </div>
@@ -44,10 +47,13 @@
             <div class="detail1-fake-button-signin">
                 <p>VIEW</p>
             </div>
-            <!--TAMBAHIN DISABLED JGN LUPA -->
             <a class="detail1-fake-button-signup disabled @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
-                @if($check)<img src="/assets/images/Checklist.svg" alt="check">@endif
-                <p>CHECK IN</p>
+                @if($check)
+                    <img src="/assets/images/Checklist.svg" alt="check">
+                    <p>CHECKED IN</p>
+                @else
+                    <p>CHECK IN</p>
+                @endif
             </a>
         </div>
         </div>
