@@ -101,7 +101,7 @@
             @endif
             @endforeach --}}
 
-            <a class="timeline-grid-x" href="{{ route('event.show', 1) }}">
+            <a class="timeline-grid-x" href="{{ route('event.detail', 1) }}">
             {{-- <div class="timeline-grid-x"> --}}
                 <div class="timeline-grid-item yes">
                     <div class="timeline-box-img img-1">

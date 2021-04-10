@@ -114,6 +114,7 @@
 
 .timeline__container .timeline__container__wrap .timeline-grid .timeline-grid-x {
   display: none;
+  z-index: 11;
 }
 
 .timeline__container .timeline__container__wrap .timeline-grid .no {
