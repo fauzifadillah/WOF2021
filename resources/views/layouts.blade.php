@@ -33,7 +33,7 @@
                 </ul>
                 @auth
                 <div class="navbar__content__button">
-                    <a class="navbar__content__button-signin" href="{{ request()->is('login') ? '#' : route('login') }}">
+                    <a class="navbar__content__button-signin" onclick="document.getElementById('logout-form').submit();">
                         <p>SIGN OUT</p>
                     </a>
                 </div>
