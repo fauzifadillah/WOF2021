@@ -19,9 +19,9 @@
                     <p>21 April, 2021 - 16:00 - 17:00</p>
                 </div>
                 <div class="detail1-img-button">
-                    <div class="detail1-img-button-signin">
+                    <a class="detail1-img-button-signin" href="{{ route('event.show', 1) }}">
                         <p>VIEW</p>
-                    </div>
+                    </a>
                     <a class="detail1-img-button-signup @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
                         @if($check)
                             <img src="/assets/images/Checklist.svg" alt="check">
@@ -47,9 +47,9 @@
         </div>
 
         <div class="detail1-fake-button">
-            <div class="detail1-fake-button-signin">
+            <a class="detail1-fake-button-signin" href="{{ route('event.show', 1) }}">
                 <p>VIEW</p>
-            </div>
+            </a>
             <a class="detail1-fake-button-signup @if($check) disabled @endif" href="{{ $check==false ? route('event.checkin', 1) : '#' }}">
                 @if($check)
                     <img src="/assets/images/Checklist.svg" alt="check">

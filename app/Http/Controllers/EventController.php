@@ -27,7 +27,7 @@ class EventController extends Controller
         return view('events.index', ['events' => $events]);
     }
 
-    public function show($id)
+    public function detail($id)
     {
         $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
         if($eventcheck){
@@ -39,7 +39,7 @@ class EventController extends Controller
             $check = False;
         }
         $model = Event::find($id);
-        return view('events.show-dummy', ['model' => $model, 'check' => $check]);
+        return view('events.detail-dummy', ['model' => $model, 'check' => $check]);
         $eventcheck = EventCheck::where('user_id',auth()->user()->id)->where('event_id',$id)->first();
         if($eventcheck){
             LogActivity::addToLog('User : Has Check in this event');
@@ -50,7 +50,12 @@ class EventController extends Controller
             $check = False;
         }
         $model = Event::find($id);
-        return view('events.show', ['model' => $model, 'check' => $check]);
+        return view('events.detail', ['model' => $model, 'check' => $check]);
+    }
+
+    public function show($id)
+    {
+        return view('events.show');
     }
 
     public function check($id)

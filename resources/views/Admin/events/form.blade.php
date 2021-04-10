@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <label for="desc" class="control-label">Description</label>
-            <textarea form ="form_modal" id="desc" class="form-control" name="desc" placeholder="Description">{{$model->desc}}</textarea>
+            <textarea rows="4" form ="form_modal" id="desc" class="form-control" name="desc" placeholder="Description">{{$model->desc}}</textarea>
         </div>
         <div class="form-group">
             <label for="category" class="control-label">Category</label><br>

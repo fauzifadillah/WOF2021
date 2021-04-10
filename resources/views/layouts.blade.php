@@ -32,6 +32,11 @@
                     <li><a>MARKET</a></li>
                 </ul>
                 @auth
+                <div class="navbar__content__button">
+                    <a class="navbar__content__button-signin" href="{{ request()->is('login') ? '#' : route('login') }}">
+                        <p>SIGN OUT</p>
+                    </a>
+                </div>
                 @else
                 <div class="navbar__content__button">
                     <a class="navbar__content__button-signin" href="{{ request()->is('login') ? '#' : route('login') }}">

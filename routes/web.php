@@ -93,6 +93,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::prefix('event')->group(function(){
     Route::get('/', 'EventController@index')->name('event.index');
-    Route::get('/show/{id}', 'EventController@show')->name('event.show');
-    Route::get('show/{id}/checkin', 'EventController@check')->name('event.checkin');
+    Route::get('{id}', 'EventController@detail')->name('event.detail');
+    Route::middleware('auth')->get('{id}/show', 'EventController@show')->name('event.show');
+    Route::middleware('auth')->post('{id}/checkin', 'EventController@check')->name('event.checkin');
 });
